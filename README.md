@@ -31,4 +31,8 @@ Mettre en place une infrastructure réseau pour la société **Pharmgreen**
 
 L'équipe présentée au point précédent vient d'être recrutée pour mettre en place une infrastructure réseau, ainsi que palier au manque de techniciens dans l'entreprise.
 
+## Rôles par sprint
+### Sprint 1
+
+
 
