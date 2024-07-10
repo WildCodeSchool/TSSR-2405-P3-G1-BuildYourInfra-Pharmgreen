@@ -28,6 +28,7 @@ Mettre en place une infrastructure réseau pour la société **Pharmgreen**
 ## Le projet et son contexte
 
 **Pharmgreen** se positionne comme un pionnier dans le domaine de la santé en proposant des dispositifs médicaux innovants d'origine végétale, répondant ainsi à une demande croissante pour des solutions de santé naturelles et respectueuses de l'environnement. Grâce à des procédés de fabrication innovants et des collaborations avec des experts en botanique et en médecine naturelle, elle s'engage à fournir des produits de haute qualité, bénéfiques à la fois pour les patients et pour la planète. Son fondateur est de Lyon, et a décidé d’implanter les locaux dans sa ville natale.
-L'équipé présentée au point précédent vient d'être recrutée pour mettre en place une infrastructure réseau, ainsi que palier au manque de techniciens dans l'entreprise.
+
+L'équipe présentée au point précédent vient d'être recrutée pour mettre en place une infrastructure réseau, ainsi que palier au manque de techniciens dans l'entreprise.
 
 
