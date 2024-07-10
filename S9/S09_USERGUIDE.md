@@ -4,10 +4,12 @@
 
 <p align="center">
 <img align="center" src="https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/Logo_PG.png">
-</p>
 
 Mettre en place une infrastructure réseau pour la société **Pharmgreen**
+</p>
 
+
+---
 
 ## État des lieux
 
@@ -29,4 +31,8 @@ Pas de télétravail pour le reste de la société.
 - La messagerie est hébergée en cloud.
 
 - Le stockage de données se fait en local sur les machines.
+
+---
+
+
 
