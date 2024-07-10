@@ -44,5 +44,5 @@ Pas de télétravail pour le reste de la société.
 
 ### Réseau envisagé
 
-![Plan_réseau](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/Projet3.png)
+![Plan_réseau]
 
