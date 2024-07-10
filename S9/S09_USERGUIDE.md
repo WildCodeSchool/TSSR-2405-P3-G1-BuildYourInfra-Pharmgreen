@@ -39,5 +39,10 @@ Pas de télétravail pour le reste de la société.
 - Schéma du réseau envisagé
 - Matériel envisagé
 - Mise en place d'une nomenclature Active Directory pour standardisation
-- 
+
+---
+
+### Réseau envisagé
+
+
 
