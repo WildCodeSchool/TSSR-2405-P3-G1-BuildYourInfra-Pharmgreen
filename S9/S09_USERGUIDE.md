@@ -36,5 +36,8 @@ Pas de télétravail pour le reste de la société.
 
 ## Analyse des besoins
 
-
+- Schéma du réseau envisagé
+- Matériel envisagé
+- Mise en place d'une nomenclature Active Directory pour standardisation
+- 
 
