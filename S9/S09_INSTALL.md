@@ -11,10 +11,10 @@ Il faut un ISO Debian téléchargé depuis le site officiel: [debian.org](https:
 
 ### 2. Créer la VM 
 
-#### A-
+#### A- Choix de l'iso
 Dans Proxmox, créer la VM en choisissant l’ISO Debian, et en lui allouant le nombre de coeurs et de RAM nécessaires à l’exercice (ici 2 coeurs et 4 Go de RAM).
 
-#### B-
+#### B- Premier lancement
 Au lancement de la VM, choisir une installation sans interface graphique. Suivre les instructions.
 
 #### C- Identifiants
