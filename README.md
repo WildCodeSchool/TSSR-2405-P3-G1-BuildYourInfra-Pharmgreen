@@ -34,5 +34,12 @@ L'équipe présentée au point précédent vient d'être recrutée pour mettre e
 ## Rôles par sprint
 ### Sprint 1
 
+| NOM      | TÂCHES                                                              |
+|----------|---------------------------------------------------------------------|
+| Ronan    | Préparation du serveur Windows 2022 en GUI<br>Présentation          |
+| Philippe | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
+| Karim    | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
+| Brice    | Préparation du serveur Debian en SSH<br>Présentation                |
+| Vanessa  | Absent                                                              |
 
 
