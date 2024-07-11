@@ -47,7 +47,7 @@ Promouvoir le serveur en Domaine Controller en utilisant la commande suivante :
 
 `Install-ADDSDomainController -InstallDns -Credential (Get-Credential <DomainName\Administrator>) -DomainName <Domaine> -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "<Administrator Password>" -Force)`
 
-(Remplacer <Domaine\Administrator> et <Domaine> par vos valeurs)
+(Remplacer "<Domaine\Administrator>" et "<Domaine >" par vos valeurs)
 
 Le mot de passe Administrateur de votre Controller AD vous sera demandé.
 
