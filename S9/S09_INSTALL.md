@@ -56,12 +56,18 @@ Le serveur redémarrera après l'installation du rôle AD-DS et la promotion au 
 
 1. Ouvrez `Server Manager`.
 2. Cliquez sur `DHCP` dans le volet de gauche.
-3. Cliquez sur `More` dans le panneau de notifications, puis sur `Complete DHCP Configuration`.
-4. Suivez l'assistant de configuration pour autoriser le serveur DHCP et créer les étendues nécessaires.
+
+![Capture d'écran 2024-07-12 112314](https://github.com/user-attachments/assets/ed5fcb8c-1b31-4218-96d0-c73d344dcb8e)
+
+4. Cliquez sur `More` dans le panneau de notifications, puis sur `Complete DHCP Configuration`.
+5. Suivez l'assistant de configuration pour autoriser le serveur DHCP et créer les étendues nécessaires.
 
 #### D. Configuration du Serveur DNS
 
 1. Ouvrez `DNS Manager` depuis `Server Manager` ou en tapant `dnsmgmt.msc` dans la barre de recherche.
+
+![Capture d'écran 2024-07-12 113231](https://github.com/user-attachments/assets/76c08333-c6dd-45eb-a782-40b8c28dad88)
+
 2. Configurez les zones de recherche directe et inverse selon vos besoins
 
 
