@@ -103,6 +103,8 @@ Au lancement de la VM, suivre les instructions d'installation.
 
 - Mettez la carte réseau que vous voulez configurer ( ici `1` )
 
+![Capture d'écran 2024-07-12 113555](https://github.com/user-attachments/assets/f0ebef93-e604-46e4-8868-c2744b9ede6b)
+
 - Mettez à présent  les configurations IP suivantes :
 
 ![Capture d'écran 2024-07-12 113705](https://github.com/user-attachments/assets/7171c1fe-79ed-4a02-aeea-26b1e970e91d)
