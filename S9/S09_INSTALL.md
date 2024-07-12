@@ -97,7 +97,15 @@ Au lancement de la VM, suivre les instructions d'installation.
 
 - Changer le nom de la machine en utilisant la commande `sconfig` et en selectionnant l'option `Computer Name`
 
-- Configurer l'adresse statique via `Network Settings`, la passerelle par défaut et mettre en DNS l'adresse du serveur AD principal
+- Configurer l'adresse statique via `Network Settings` en tapant `8` 
+
+![Capture d'écran 2024-07-12 113538](https://github.com/user-attachments/assets/f9edbf02-3eb6-41b2-b933-34db72dae0f7)
+
+- Mettez la carte réseau que vous voulez configurer ( ici `1` )
+
+- Mettez à présent  les configurations IP suivantes :
+
+![Capture d'écran 2024-07-12 113705](https://github.com/user-attachments/assets/7171c1fe-79ed-4a02-aeea-26b1e970e91d)
 
 #### F- Rejoindre l’Active Directory
 
