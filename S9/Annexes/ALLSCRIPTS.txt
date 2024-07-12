@@ -3,7 +3,7 @@ Import-Module ImportExcel
 
 $domain = "DC=pharmgreen,DC=com"
 $excel = "C:\Users\Administrator\Desktop\ListEmployees_Pharmgreen1.xlsx"
-$OU1s = @("PG_Users, PG_Computers, PG_Groups")
+$OU1s = @("PG_Users", "PG_Computers", "PG_Groups")
 $data = Import-Excel -Path $excel
 $units = $data.Unit | Sort-Object -Unique
 $groups = $data.Groupe |Sort-Object -Unique
@@ -16,7 +16,7 @@ foreach ($unit in $units) {
     foreach ($ou1 in $OU1s) {
     New-ADOrganizationalUnit -Name $unit -Path "OU=$ou1, $domain" -ProtectedFromAccidentalDeletion $false
     }
-
+}
 ----------------------------
 
 
