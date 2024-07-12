@@ -36,10 +36,10 @@ L'équipe présentée au point précédent vient d'être recrutée pour mettre e
 
 | NOM      | TÂCHES                                                              |
 |----------|---------------------------------------------------------------------|
-| Ronan    | Préparation du serveur Windows 2022 en GUI<br>Présentation          |
-| Philippe | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
-| Karim    | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
-| Brice    | Préparation du serveur Debian en SSH<br>Présentation                |
+| Ronan  (PO)  | Préparation du serveur Windows 2022 en GUI<br>Présentation          |
+| Philippe (SM) | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
+| Karim  (DEV)  | Gestion de l’arborescence AD manuellement et en automatisation<br>Préparation du serveur Debian en SSH<br>Présentation |
+| Brice  (DEV)  | Préparation du serveur Debian en SSH<br>Présentation                |
 | Vanessa  | Absent                                                              |
 
 
