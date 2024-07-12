@@ -117,7 +117,13 @@ Installer les fonctionnalités suivantes qui sont necessaire à la préparation 
 - AD-Domain-Services : Services de domaine Active Directory
 - DNS
 
-Voici les commandes nécessaires :
+- Avant d'aller d'en Powershell , d'être en mode root/administateur avant de faire les commandes suivantes :
+
+- A présent, dans le menu de Windows Core tapez `15` pour accéder à Powershell : 
+
+![Capture d'écran 2024-07-12 114711](https://github.com/user-attachments/assets/c4cba65b-fe0b-4061-a659-c3ad0ac682a4)
+
+- Voici les commandes nécessaires :
 
 `Add-WindowsFeature -Name "RSAT-AD-Tools" -IncludeManagementTools -IncludeAllSubFeature`
 
@@ -125,15 +131,15 @@ Voici les commandes nécessaires :
 
 `Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature`
 
-Promouvoir le serveur en Domaine Controller en utilisant la commande suivante :
+- Promouvoir le serveur en Domaine Controller en utilisant la commande suivante :
 
 `Install-ADDSDomainController -InstallDns -Credential (Get-Credential <DomainName\Administrator>) -DomainName <Domaine> -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "<Administrator Password>" -Force)`
 
 (Remplacer "<Domaine\Administrator>" et "<Domaine >" par vos valeurs)
 
-Le mot de passe Administrateur de votre Controller AD vous sera demandé.
+- Le mot de passe Administrateur de votre Controller AD vous sera demandé.
 
-Le Serveur Core est maintenant configuré comme Domaine Controller 
+- Le Serveur Core est maintenant configuré comme Domaine Controller 
 
 
 
