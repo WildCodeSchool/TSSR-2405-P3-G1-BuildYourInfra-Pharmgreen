@@ -35,13 +35,20 @@
 #### B. Configuration du Contrôleur de Domaine (AD-DS)
 
 1. Après l'installation des rôles, un **notification flag** apparaîtra en haut de Server Manager. Cliquez dessus, puis sur `Promote this server to a domain controller`.
+
+![Capture d'écran 2024-07-12 105934](https://github.com/user-attachments/assets/2c4e5163-4149-49c0-b0b7-34a9353b6531)
+
 2. Dans la fenêtre `Deployment Configuration`:
    - Sélectionnez `Add a new forest`.
-   - Entrez le nom de domaine racine (ex: `example.com`), puis cliquez sur `Next`.
+   - Entrez le nom de domaine racine (ex: `pharmgreen.com`), puis cliquez sur `Next`.
+  
+![Capture d'écran 2024-07-12 105941](https://github.com/user-attachments/assets/8a65be71-96e4-4b39-b97d-65421e9f73ec)
+
 3. Configurez les options de domaine et entrez un **mot de passe DSRM**.
-4. Continuez avec les paramètres par défaut pour `Additional Options` et `Paths`.
-5. Vérifiez les options dans `Review Options` et cliquez sur `Next`.
-6. Vérifiez la **vérification de la configuration requise** puis cliquez sur `Install`.
+
+![Capture d'écran 2024-07-12 105950](https://github.com/user-attachments/assets/3fa7061a-8a7f-4c0d-85e4-94eb5ee16a7c)
+
+4. Vérifiez les options suivantes et cliquez sur `Next` jusqu'à `Install` .
 
 Le serveur redémarrera après l'installation du rôle AD-DS et la promotion au contrôleur de domaine.
 
