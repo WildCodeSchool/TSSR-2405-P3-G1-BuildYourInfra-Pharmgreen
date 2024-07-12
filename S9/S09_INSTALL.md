@@ -6,7 +6,7 @@
 
 ### Étapes de Configuration
 
-#### 1. Installation des Rôles AD-DS, DHCP et DNS
+#### A. Installation des Rôles AD-DS, DHCP et DNS
 
 1. **Ouvrez Server Manager**.
 2. Cliquez sur `Manage` puis sur `Add Roles and Features`.
@@ -21,7 +21,7 @@
 5. Cliquez sur `Next` pour passer à la section `Features`. Cliquez encore sur `Next` car aucune fonctionnalité additionnelle n'est nécessaire.
 6. Cliquez sur `Next` pour passer les sections `AD DS`, `DHCP Server` et `DNS Server`, puis sur `Install`.
 
-#### 2. Configuration du Contrôleur de Domaine (AD-DS)
+#### B. Configuration du Contrôleur de Domaine (AD-DS)
 
 1. Après l'installation des rôles, un **notification flag** apparaîtra en haut de Server Manager. Cliquez dessus, puis sur `Promote this server to a domain controller`.
 2. Dans la fenêtre `Deployment Configuration`:
@@ -34,14 +34,14 @@
 
 Le serveur redémarrera après l'installation du rôle AD-DS et la promotion au contrôleur de domaine.
 
-#### 3. Configuration du Serveur DHCP
+#### C. Configuration du Serveur DHCP
 
 1. Ouvrez `Server Manager`.
 2. Cliquez sur `DHCP` dans le volet de gauche.
 3. Cliquez sur `More` dans le panneau de notifications, puis sur `Complete DHCP Configuration`.
 4. Suivez l'assistant de configuration pour autoriser le serveur DHCP et créer les étendues nécessaires.
 
-#### 4. Configuration du Serveur DNS
+#### D. Configuration du Serveur DNS
 
 1. Ouvrez `DNS Manager` depuis `Server Manager` ou en tapant `dnsmgmt.msc` dans la barre de recherche.
 2. Configurez les zones de recherche directe et inverse selon vos besoins
