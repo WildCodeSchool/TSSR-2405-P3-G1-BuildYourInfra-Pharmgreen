@@ -1,4 +1,52 @@
----
+
+## Création d'un Serveur Windows Server 2022 GUI avec AD-DS, DHCP, et DNS
+
+### Pré-requis
+- **ISO Windows Server 2022** ou un accès à un serveur Windows Server 2022 sur Proxmox..
+
+### Étapes de Configuration
+
+#### 1. Installation des Rôles AD-DS, DHCP et DNS
+
+1. **Ouvrez Server Manager**.
+2. Cliquez sur `Manage` puis sur `Add Roles and Features`.
+3. Cliquez sur `Next` jusqu'à arriver à la sélection du serveur. Assurez-vous que votre serveur est sélectionné, puis cliquez sur `Next`.
+4. **Sélection des Rôles**:
+   - Cochez `Active Directory Domain Services`.
+     - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
+   - Cochez `DHCP Server`.
+     - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
+   - Cochez `DNS Server`.
+     - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
+5. Cliquez sur `Next` pour passer à la section `Features`. Cliquez encore sur `Next` car aucune fonctionnalité additionnelle n'est nécessaire.
+6. Cliquez sur `Next` pour passer les sections `AD DS`, `DHCP Server` et `DNS Server`, puis sur `Install`.
+
+#### 2. Configuration du Contrôleur de Domaine (AD-DS)
+
+1. Après l'installation des rôles, un **notification flag** apparaîtra en haut de Server Manager. Cliquez dessus, puis sur `Promote this server to a domain controller`.
+2. Dans la fenêtre `Deployment Configuration`:
+   - Sélectionnez `Add a new forest`.
+   - Entrez le nom de domaine racine (ex: `example.com`), puis cliquez sur `Next`.
+3. Configurez les options de domaine et entrez un **mot de passe DSRM**.
+4. Continuez avec les paramètres par défaut pour `Additional Options` et `Paths`.
+5. Vérifiez les options dans `Review Options` et cliquez sur `Next`.
+6. Vérifiez la **vérification de la configuration requise** puis cliquez sur `Install`.
+
+Le serveur redémarrera après l'installation du rôle AD-DS et la promotion au contrôleur de domaine.
+
+#### 3. Configuration du Serveur DHCP
+
+1. Ouvrez `Server Manager`.
+2. Cliquez sur `DHCP` dans le volet de gauche.
+3. Cliquez sur `More` dans le panneau de notifications, puis sur `Complete DHCP Configuration`.
+4. Suivez l'assistant de configuration pour autoriser le serveur DHCP et créer les étendues nécessaires.
+
+#### 4. Configuration du Serveur DNS
+
+1. Ouvrez `DNS Manager` depuis `Server Manager` ou en tapant `dnsmgmt.msc` dans la barre de recherche.
+2. Configurez les zones de recherche directe et inverse selon vos besoins
+
+
 ## Installation du serveur Windows Core et configuration en Domain Controller
 
 ### 1. Prérequis:
