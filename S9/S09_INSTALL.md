@@ -9,8 +9,16 @@
 #### A. Installation des Rôles AD-DS, DHCP et DNS
 
 1. **Ouvrez Server Manager**.
+
+![Capture d'écran 2024-07-12 105838](https://github.com/user-attachments/assets/898264bf-f831-4bde-bb9b-e2c9eb3cbc70)
+
 2. Cliquez sur `Manage` puis sur `Add Roles and Features`.
+
+![Capture d'écran 2024-07-12 105846](https://github.com/user-attachments/assets/338964b7-f0a3-42b5-accf-450a22c2ff17)
+
+
 3. Cliquez sur `Next` jusqu'à arriver à la sélection du serveur. Assurez-vous que votre serveur est sélectionné, puis cliquez sur `Next`.
+
 4. **Sélection des Rôles**:
    - Cochez `Active Directory Domain Services`.
      - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
@@ -18,6 +26,9 @@
      - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
    - Cochez `DNS Server`.
      - Une fenêtre pop-up apparaîtra pour ajouter les fonctionnalités requises. Cliquez sur `Add Features`.
+
+ ![Capture d'écran 2024-07-12 111257](https://github.com/user-attachments/assets/9f1c436b-ea1a-4ee8-ab2d-7b35369d0f6c)
+
 5. Cliquez sur `Next` pour passer à la section `Features`. Cliquez encore sur `Next` car aucune fonctionnalité additionnelle n'est nécessaire.
 6. Cliquez sur `Next` pour passer les sections `AD DS`, `DHCP Server` et `DNS Server`, puis sur `Install`.
 
