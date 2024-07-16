@@ -50,5 +50,7 @@ Pas de télétravail pour le reste de la société.
 
 ### Arborescence Active Directory
 
+![Plan_réseau](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/ArboAD_PG.png)
 
+---
 
