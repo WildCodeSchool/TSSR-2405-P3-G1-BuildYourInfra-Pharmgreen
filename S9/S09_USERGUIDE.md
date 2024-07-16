@@ -44,5 +44,11 @@ Pas de télétravail pour le reste de la société.
 
 ### Réseau envisagé
 
-![Plan_réseau](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/Plan_réseau.png)
+![Plan_réseau](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/Réseau_Pharmgreen.png)
+
+---
+
+### Arborescence Active Directory
+
+
 
