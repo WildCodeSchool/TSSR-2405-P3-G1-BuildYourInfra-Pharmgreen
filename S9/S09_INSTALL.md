@@ -135,7 +135,7 @@ Installer les fonctionnalités suivantes qui sont necessaire à la préparation 
 
 `Install-ADDSDomainController -InstallDns -Credential (Get-Credential <DomainName\Administrator>) -DomainName <Domaine> -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "<Administrator Password>" -Force)`
 
-(Remplacer "<Domaine\Administrator>" et "<Domaine >" par vos valeurs)
+(Remplacer "<Domaine\Administrator>" et "<"Domaine">" par vos valeurs)
 
 - Le mot de passe Administrateur de votre Controller AD vous sera demandé.
 
