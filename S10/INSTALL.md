@@ -37,7 +37,7 @@
 
    > deb https://packages.sury.org/php bookworm main
 
-   ![Sources.list]
+   ![Sources.list](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/Annexes/sources.list.png)
 
    b. *Mettre à jour les paquets*
 
@@ -51,7 +51,7 @@
 
    `sudo update-alternatives --config php` / `sudo update-alternatives --config phar` / `sudo update-alternatives --config phar`
 
-   ![Update-alternatives]
+   ![Update-alternatives](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/Annexes/update_alternatives.png)
 
    e. *Modifier la version de PHP utilisée par Apache*
 
