@@ -65,7 +65,7 @@ Import-Module ActiveDirectory
 Import-Module ImportExcel
 
 $domain = "DC=pharmgreen,DC=com"
-$excel = "C:\Users\Administrator\Desktop\ListEmployees_Pharmgreen1.xlsx"
+$excel = "C:\Users\Administrator\Desktop\Scripts\AD_Pharmgreen.xlsx"
 $OU1s = @("PG_Users", "PG_Computers", "PG_Groups")
 $data = Import-Excel -Path $excel
 $units = $data.Unit | Sort-Object -Unique
@@ -89,7 +89,7 @@ Import-Module ActiveDirectory
 Import-Module ImportExcel
 
 $domain = "DC=pharmgreen,DC=com"
-$excel = "C:\Users\Administrator\Desktop\Scripts\OU_Groups_Pharmgreen.xlsx"
+$excel = "C:\Users\Administrator\Desktop\Scripts\AD_Pharmgreen.xlsx"
 $data = Import-Excel -Path $excel 
 
 foreach ($row in $data) {
@@ -104,7 +104,7 @@ Import-Module ActiveDirectory
 Import-Module ImportExcel
 
 $domain = "DC=pharmgreen,DC=com"
-$excel = "C:\Users\Administrator\Desktop\Scripts\ListEmployees_Pharmgreen1.xlsx"
+$excel = "C:\Users\Administrator\Desktop\Scripts\AD_Pharmgreen.xlsx"
 $data = Import-Excel -Path $excel
 $defaultPassword = "Banane123*"
 
