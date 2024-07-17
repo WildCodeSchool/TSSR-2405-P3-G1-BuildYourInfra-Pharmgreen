@@ -1,0 +1,8 @@
+ServerName=Pharmgreen-Serv
+IPAddress=192.168.1.10
+SubnetMask=255.255.255.0
+Gateway=192.168.1.1
+DNS=192.168.1.2
+DomainName=example.com
+DomainAdminUser=adminUser
+DomainAdminPassword=Banane123
