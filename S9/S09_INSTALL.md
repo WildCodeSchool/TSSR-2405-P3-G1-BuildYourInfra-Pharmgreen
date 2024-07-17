@@ -1,3 +1,9 @@
+# Configuration du domaine AD, d'un serveur Windows Core backup et d'un serveur Debian
+
+---
+- [Création d'un Serveur Windows Server 2022 GUI avec AD-DS, DHCP, et DNS](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/S09_INSTALL.md#cr%C3%A9ation-dun-serveur-windows-server-2022-gui-avec-ad-ds-dhcp-et-dns)
+- [Installation du serveur Windows Core et configuration en Domain Controller](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/S09_INSTALL.md#installation-du-serveur-windows-core-et-configuration-en-domain-controller)
+- [Installation du serveur Debian](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/S09_INSTALL.md#installation-du-serveur-debian)
 
 ## Création d'un Serveur Windows Server 2022 GUI avec AD-DS, DHCP, et DNS
 
