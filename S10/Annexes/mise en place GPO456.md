@@ -1,6 +1,7 @@
+Mise en place GPO
 **4. Mise en place d'une GPO WINDOWS UPDATE:**   
-Pour se rendre dans "Group Policy Objects" GPO,taper gpmc.msc dans la barre de recherche en bas a gauche de l'écran.  
- 
+Pour créer une nouvelle GPO, se rendre dans "Group Policy Objects",taper gpmc.msc puis cliquer sur l'icone affiché.  
+La fenêtre 
 
 GPO 1 : Gestion de Windows Update   
 
