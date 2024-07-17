@@ -63,7 +63,7 @@ Les OU "PG_France" et "PG_Lyon" ont été crée manuellement.
 
 a. **Création des OU**
 
-```
+```bash
 Import-Module ActiveDirectory
 Import-Module ImportExcel
 
@@ -87,7 +87,7 @@ foreach ($unit in $units) {
 
 b. **Création des groupes de sécurité**
 
-```
+```bash
 Import-Module ActiveDirectory
 Import-Module ImportExcel
 
@@ -102,7 +102,7 @@ foreach ($row in $data) {
 
 c. **Import des utilisateurs**
 
-```
+```bash
 Import-Module ActiveDirectory
 Import-Module ImportExcel
 
