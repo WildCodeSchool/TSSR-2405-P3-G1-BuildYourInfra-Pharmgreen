@@ -1,4 +1,4 @@
-# Configuration du domaine AD, d'un serveur Windows Core backup et d'un serveur Debian
+# Configuration d'un serveur Windows 2022 en domaine AD, d'un serveur Windows Core en backup et d'un serveur Debian (pour GLPI)
 
 ---
 
