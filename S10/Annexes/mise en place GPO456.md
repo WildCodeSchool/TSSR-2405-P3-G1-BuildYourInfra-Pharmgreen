@@ -10,11 +10,13 @@ La fenêtre "Group Policy Management" suivante s'affiche :
 
 **1. Créer la GPO :**   
 
+  
+
 Faire un clic droit sur "Group Policy Objects" puis choisir "New".  
 
 ![CAP1_newGPO](https://github.com/user-attachments/assets/d852f8b0-a78f-4b58-8c19-c44f4a2e24dd)    
    
-Dans la console de gestion des stratégies de groupe :    
+    
 
 Donner un nom à la GPO, par exemple **"Gestion de Windows Update"**.   
 
@@ -56,7 +58,8 @@ Aller à Configuration User Configuration -> Administrative Templates -> System.
 Recherchez et activez la stratégie "Prevent access to registry tools"
 Faire "Edit" (avec le bouton droit de la sourie) puis dans la fenêtre d'option activer (enabled) puis "Apply" puis "OK"   
 
-https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/Annexes/Capture/CA4_enableoption.PNG   
+![CA4_enableoption](https://github.com/user-attachments/assets/055c7320-e212-4c3e-8823-72cde6d29207)
+   
 
 **GPO 6: Blocage du panneau de configuration**    
 
