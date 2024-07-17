@@ -83,5 +83,14 @@
 
 8. **Récupération des sources de GLPI**
 
+   ```bash
+   wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
+   # Remplacer "monNomDeDomaine" par votre domaine ou en créer un
+   sudo mkdir /var/www/html/glpi."monNomDeDomaine"
+   sudo tar -xzvf glpi-10.0.2.tgz
+   sudo cp -R glpi/* /var/www/html/glpi."monNomDeDomaine"/
+   sudo chown -R www-data:www-data /var/www/html/glpi."monNomDeDomaine"/
+   sudo chmod -R 775 /var/www/html/glpi."monNomDeDomaine"/
+   ```
 
- 
+   
