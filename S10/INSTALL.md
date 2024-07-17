@@ -7,26 +7,26 @@
 
 ## Configuration d'un serveur GLPI sur Debian, synchronisation avec l'AD du domaine et mise en place d'un système de ticketing
 
-### Installtion des pré-requis
+### Installation des pré-requis
 
-1. **Vérifier les mises à jour et les installer**
+**1. Vérifier les mises à jour et les installer**
    
    `sudo apt-get update && sudo apt-get upgrade`
 
-2. **Installer Apache, qui hébergera le serveur GLPI, et l'activer**
+**2. Installer Apache, qui hébergera le serveur GLPI, et l'activer**
    
    `sudo apt-get install apache2 -y`
    `sudo systemctl enable apache2`
 
-3. **Installer MariaDB, qui servira de base de données à GLPI**
+**3. Installer MariaDB, qui servira de base de données à GLPI**
    
    `sudo apt-get install mariadb-server -y`
 
-4. **Installer le module PHP et ses annexes**
+**4. Installer le module PHP et ses annexes**
    
    `sudo apt-get install php libapache2-mod-php -y`
 
-5. **Vérifier la version de PHP (7.4 à 8.2.0 pour être compatible avec GLPI)**
+**5. Vérifier la version de PHP (7.4 à 8.2.0 pour être compatible avec GLPI)**
     
    `sudo php --version`
 
@@ -63,11 +63,11 @@
 
    `systemctl restart apache2`
 
-6. **Installer les modules annexes de PHP pour une version spécifique**
+**6. Installer les modules annexes de PHP pour une version spécifique**
 
   `sudo apt-get install php7.4-{ldap,imap,apcu,xmlrpc,curl,common,gd,json,mbstring,mysql,xml,intl,zip,bz2}`
 
-7. **Création de la base de données avec Maria DB**
+**7. Création de la base de données avec Maria DB**
 
    ```bash
    # Initialisation de la base de données
@@ -81,7 +81,7 @@
    quit
    ```
 
-8. **Récupération des sources de GLPI**
+**8. Récupération des sources de GLPI**
 
    ```bash
    wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
@@ -92,5 +92,12 @@
    sudo chown -R www-data:www-data /var/www/html/glpi."monNomDeDomaine"/
    sudo chmod -R 775 /var/www/html/glpi."monNomDeDomaine"/
    ```
+
+### Configuration de GLPI
+
+**1. Connexion à l'interface du serveur GLPI depuis un client**
+
+Depuis un client du domaine, accéder à GLPI via un navigateur avec l'url **http://adresseIpDuserveur/glpi."monNomDeDomaine"
+
 
    
