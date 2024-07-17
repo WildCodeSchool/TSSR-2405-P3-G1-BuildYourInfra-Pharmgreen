@@ -84,7 +84,7 @@
 **8. Récupération des sources de GLPI**
 
    ```bash
-   wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
+   sudo wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
    # Remplacer "monNomDeDomaine" par votre domaine ou en créer un
    sudo mkdir /var/www/html/glpi."monNomDeDomaine"
    sudo tar -xzvf glpi-10.0.2.tgz
