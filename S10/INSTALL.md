@@ -1,7 +1,9 @@
-# Configuration d'un serveur GLPI sur Debian pour gérer le ticketing et création de GPO sur Active Directory
+# Configuration d'un serveur GLPI sur Debian pour gérer le ticketing
 
 ---
 
+- [Pré-requis](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/INSTALL.md#installation-des-pr%C3%A9-requis)
+- [Configuration de GLPI](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/INSTALL.md#configuration-de-glpi))
 
 ---
 
