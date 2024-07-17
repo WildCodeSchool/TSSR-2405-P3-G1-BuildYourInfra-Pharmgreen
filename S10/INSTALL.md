@@ -7,9 +7,7 @@
 
 ---
 
-## Configuration d'un serveur GLPI sur Debian, synchronisation avec l'AD du domaine et mise en place d'un système de ticketing
-
-### Installation des pré-requis
+## Installation des pré-requis
 
 **1. Vérifier les mises à jour et les installer**
    
@@ -57,13 +55,13 @@
 
    e. *Modifier la version de PHP utilisée par Apache*
 
-   `a2dismod php8.3`
+   `sudo a2dismod php8.3`
 
-   `a2enmod php7.4`
+   `sudo a2enmod php7.4`
 
    f. *Redémarrer Apache*
 
-   `systemctl restart apache2`
+   `sudo systemctl restart apache2`
 
 **6. Installer les modules annexes de PHP pour une version spécifique**
 
@@ -95,7 +93,7 @@
    sudo chmod -R 775 /var/www/html/glpi."monNomDeDomaine"/
    ```
 
-### Configuration de GLPI
+## Configuration de GLPI
 
 **1. Connexion à l'interface du serveur GLPI depuis un client**
 
