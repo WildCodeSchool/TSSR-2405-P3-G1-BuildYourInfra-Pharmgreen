@@ -50,13 +50,16 @@ Pas de télétravail pour le reste de la société.
 
 ### Arborescence Active Directory
 
+Cette arborescence permet facilement l'ajout de nouvelles OU en cas d'expansion.
+
 ![Plan_réseau](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/ArboAD_PG.png)
 
 ---
 
 ### Gestion de l'arborescence AD
 
-Un fichier .xlsx [(AD_Pharmgreen.xlsx)](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/AD_Pharmgreen.xlsx) a été utilisé pour importer les unités organisationnelles, les groupes de sécurité ainsi que les collaborateurs de la société, à l'aide de 3 scripts:
+Un fichier .xlsx [(AD_Pharmgreen.xlsx)](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S9/Annexes/AD_Pharmgreen.xlsx) a été utilisé pour importer les unités organisationnelles, les groupes de sécurité ainsi que les collaborateurs de la société, à l'aide de 3 scripts.
+Les OU "PG_France" et "PG_Lyon" ont été crée manuellement.
 
 a. **Création des OU**
 
