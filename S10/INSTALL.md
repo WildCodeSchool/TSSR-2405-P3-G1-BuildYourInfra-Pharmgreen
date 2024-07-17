@@ -97,7 +97,7 @@
 
 **1. Connexion à l'interface du serveur GLPI depuis un client**
 
-Depuis un client du domaine, accéder à GLPI via un navigateur avec l'url **http://adresseIpDuserveur/glpi."monNomDeDomaine"
+Depuis un client du domaine, accéder à GLPI via un navigateur avec l'url **http://adresseIpDuserveur/glpi."monNomDeDomaine"**
 
 
    
