@@ -164,6 +164,90 @@ Activer la stratégie Interdire l'accès au panneau de configuration et aux para
 
 Tous ces paramètres peuvent être changés suivant les besoins.   
 
+Pour créer ces GPO (Group Policy Objects) dans un environnement Windows Server, voici des instructions simplifiées pour chaque cas :
+
+Pour créer et configurer des GPO (Group Policy Objects) pour les tâches spécifiées, vous pouvez suivre les étapes suivantes. Assurez-vous que vous avez les droits administratifs nécessaires sur votre domaine Active Directory (AD).
+
+### Restriction des périphériques amovibles (n°7)
+
+1. **Ouvrir la console de gestion des stratégies de groupe (GPMC)**:
+   - Allez dans le menu Démarrer, tapez `gpmc.msc`, puis appuyez sur Entrée.
+
+2. **Créer une nouvelle GPO**:
+   - Dans la console GPMC, faites un clic droit sur l’OU (Unité d'Organisation) où vous souhaitez appliquer cette GPO, puis sélectionnez `Créer un GPO dans ce domaine, et le lier ici...`.
+   - Nommez la GPO, par exemple, "Restriction des périphériques amovibles".
+
+3. **Configurer les paramètres de restriction**:
+   - Faites un clic droit sur la GPO nouvellement créée et sélectionnez `Modifier`.
+   - Allez à `Configuration de l'ordinateur -> Modèles d'administration -> Système -> Accès amovible`.
+   - Configurez les paramètres tels que `Deny read access` et `Deny write access` pour les types de périphériques que vous souhaitez restreindre (CD et DVD, disques amovibles, etc.).
+
+### Gestion d'un compte du domaine qui est administrateur local des machines (n°8)
+
+1. **Créer une GPO pour ajouter un utilisateur de domaine aux administrateurs locaux**:
+   - Suivez les étapes pour ouvrir GPMC et créer une nouvelle GPO, par exemple, "Ajout Admin Local".
+
+2. **Configurer les paramètres pour ajouter l'utilisateur**:
+   - Faites un clic droit sur la GPO créée et sélectionnez `Modifier`.
+   - Allez à `Configuration de l'ordinateur -> Stratégies -> Paramètres Windows -> Paramètres de sécurité -> Groupes restreints`.
+   - Faites un clic droit sur `Groupes restreints` et sélectionnez `Ajouter un groupe`.
+   - Tapez `Administrateurs` et cliquez sur OK.
+   - Cliquez sur `Ajouter un utilisateur ou un groupe` sous `Ce groupe est membre de ces groupes` et ajoutez le compte de domaine que vous souhaitez ajouter comme administrateur local.
+
+
+### Gestion du pare-feu (GPO n°9)
+
+Pour configurer les règles du pare-feu via une GPO :
+
+1. **Ouvrir l'éditeur de stratégie de groupe :**
+   - Sur votre contrôleur de domaine ou un serveur avec l'outil Group Policy Management installé, ouvrez "Group Policy Management".
+
+2. **Créer une nouvelle GPO :**
+   - Cliquez avec le bouton droit sur l'unité d'organisation (OU) ou le domaine approprié.
+   - Choisissez "Create a GPO in this domain, and Link it here...".
+   - Nommez la nouvelle GPO (par exemple, "Gestion du pare-feu").
+
+3. **Configurer les paramètres du pare-feu :**
+   - Sous "Computer Configuration" > "Policies" > "Windows Settings" > "Security Settings" > "Windows Firewall with Advanced Security", vous pouvez configurer les règles de pare-feu entrantes et sortantes.
+
+4. **Appliquer la GPO :**
+   - Assurez-vous que la GPO est liée à l'OU appropriée ou au domaine entier.
+
+### Définition de scripts de démarrage (GPO n°13)
+
+Pour définir des scripts de démarrage pour les machines ou les utilisateurs :
+
+1. **Ouvrir l'éditeur de stratégie de groupe :**
+   - Utilisez "Group Policy Management" comme précédemment.
+
+2. **Créer une nouvelle GPO :**
+   - Créez une nouvelle GPO comme décrit dans la section précédente.
+
+3. **Configurer les scripts de démarrage :**
+   - Sous "Computer Configuration" ou "User Configuration", allez à "Policies" > "Windows Settings" > "Scripts (Startup/Shutdown)".
+   - Double-cliquez sur "Startup" pour configurer les scripts de démarrage des ordinateurs, ou "Logon" pour les scripts de connexion des utilisateurs.
+   - Ajoutez les scripts nécessaires en utilisant les boutons "Add".
+
+4. **Appliquer la GPO :**
+   - Assurez-vous que la GPO est liée à l'OU ou au domaine où vous voulez que les scripts s'exécutent.
+
+### Politique de sécurité PowerShell (GPO n°14)
+
+Pour définir des politiques de sécurité PowerShell via une GPO :
+
+1. **Ouvrir l'éditeur de stratégie de groupe :**
+   - Utilisez "Group Policy Management" comme précédemment.
+
+2. **Créer une nouvelle GPO :**
+   - Créez une nouvelle GPO comme décrit ci-dessus.
+
+3. **Configurer les paramètres de sécurité PowerShell :**
+   - Sous "Computer Configuration" ou "User Configuration", allez à "Policies" > "Administrative Templates" > "Windows Components" > "Windows PowerShell".
+   - Vous pouvez activer/désactiver divers paramètres de sécurité PowerShell comme "Turn on Script Execution", "Script Block Logging", etc.
+
+4. **Appliquer la GPO :**
+   - Liez la GPO à l'OU ou au domaine approprié.
+
 # Mise en place d’un GPO Standard
 
 ## A- GPO pour Rediriger les Dossiers
