@@ -42,4 +42,13 @@ L'équipe présentée au point précédent vient d'être recrutée pour mettre e
 | Brice  (DEV)  | Préparation du serveur Debian en SSH<br>Présentation                |
 | Vanessa  | Absent                                                              |
 
+### Sprint 2
+
+| NOM      | TÂCHES                                                              |
+|----------|---------------------------------------------------------------------|
+| Ronan    | GPO Sécurité<br>Script automatisation du serveur Core pour rejoindre ADDS<br>Documentation |         |
+| Philippe | Mise en place GLPI<br> Script automatisation du serveur Debian <br>Documentation|
+| Karim  PO  |GPO Sécurité<br>Script automatisation du serveur Core pour rejoindre ADDS<br>Documentation|
+| Brice  SM  | GPO Sécurité et Standards<br>Script automatisation du serveur Core pour rejoindre ADDS<br>Documentation             |
+| Vanessa  |GPO Sécurité                                                         |
 
