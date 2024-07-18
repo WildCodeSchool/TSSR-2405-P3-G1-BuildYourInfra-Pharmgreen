@@ -47,9 +47,9 @@
 
    `sudo apt install php7.4` or `sudo apt install php8.1`
 
-   d. *Modifier la version de PHP utilisé (ainsi que phar et phar.phar) en selectionnant les versions souhaitées*
+   d. *Modifier la version de PHP utilisée (ainsi que phar et phar.phar) en selectionnant les versions souhaitées*
 
-   `sudo update-alternatives --config php` / `sudo update-alternatives --config phar` / `sudo update-alternatives --config phar`
+   `sudo update-alternatives --config php` / `sudo update-alternatives --config phar` / `sudo update-alternatives --config phar.phar`
 
    ![Update-alternatives](https://github.com/WildCodeSchool/TSSR-2405-P3-G2-BuildYourInfra-Pharmgreen/blob/main/S10/Annexes/update_alternatives.png)
 
