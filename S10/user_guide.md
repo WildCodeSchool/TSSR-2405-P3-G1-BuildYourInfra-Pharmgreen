@@ -201,3 +201,33 @@ Ensuite, nous irons dans le sous-menu suivant :
 
 De cette manière, le fond d’écran ne peut pas être modifié. Nous obtenons le menu suivant :
 <img width="800" alt="Capture d’écran 2024-07-16 à 11 25 39" src="https://github.com/user-attachments/assets/b2bc4fe3-7180-4400-8005-486ddd7198ee">
+
+# C- GPO pour la gestion de l’alimentation
+
+Ici, nous créons un GPO qui va permettre une bonne gestion de l’alimentation, et ainsi permettre une optimisation de l’énergie de Pharmgreen.
+
+## Navigation dans les sous-menus après la création du GPO
+
+1. **Computer Configuration**
+2. **Policies**
+3. **Administrative Templates**
+4. **System**
+5. **Power Management**
+
+### Paramétrage du délai de mise en veille
+
+- **Specify the system sleep timeout (plugged in)** dans **Sleep settings**.
+
+Ici, nous avons choisi un délai de **5 minutes** avant que les ordinateurs se mettent en veille. Au-delà d’une économie d’énergie, cela permet de reverrouiller l’ordinateur en cas d’oubli des utilisateurs lors de leurs départs.
+
+### Sélection du plan d'alimentation actif
+
+- **Select an active power plan**
+
+Cela permet de choisir le type d'efficience des ordinateurs. Ici, nous choisissons le **mode basse consommation**.
+
+
+
+
+
+
