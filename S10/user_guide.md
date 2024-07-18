@@ -32,6 +32,7 @@ Pour ce faire, il faut naviguer dans les sous-menus suivants après la création
 Ces 3 paramètres nous permettent d’assurer la sécurité des accès aux postes utilisateurs, grâce à un renouvellement régulier et une variété de mots de passe robustes. Enfin, le nombre de 10 caractères est un choix stratégique, qui permet un bon compromis entre robustesse et mémorisation des mots de passe.
 
 Nous avons donc un menu des mots de passe qui ressemble à ce qui suit :
+
 <img width="344" alt="Capture d’écran 2024-07-15 à 11 39 30" src="https://github.com/user-attachments/assets/a13bcc27-265b-4260-801f-75154162fad8">
 
 
