@@ -310,6 +310,36 @@ Ici, nous avons choisi un délai de **5 minutes** avant que les ordinateurs se m
 
 Cela permet de choisir le type d'efficience des ordinateurs. Ici, nous choisissons le **mode basse consommation**.
 
+## D- GPO pour le menu démarrer:
+
+Ici, nous créons un GPO qui va permettre de cacher les fonctionnalités non essentielles du menu démarrer: ici “My pictures”, “My music”, “Network”.
+
+Pour ce faire, il faut naviguer dans les sous-menus suivants après la création du GPO:
+
+User Configuration > Preferences > Control Panel Settings > Start Menu
+
+
+Puis clique droit, New: Et cocher “do not display this item” pour My pictures, My music et network connections.
+
+Puis apply et okay.
+
+## E- GPO pour la landing page du navigateur:
+
+Ici, nous créons un GPO qui va permettre d’avoir pour landing page le site de pharmgreen que nous créerons plus tard dans le navigateur.
+
+Pour ce faire, il faut naviguer dans le menu suivant:
+
+User Configuration > Preferences > Control Panel Settings > Internet Settings
+
+
+Puis clique droit, New: Et cocher “do not display this item” pour My pictures, My music et network connections.
+
+### Onglet Général :
+Dans la fenêtre des propriétés de Internet Explorer 10, allez à l'onglet Général.
+Dans le champ Landing page, entrez l'URL de Pharmgreen.
+Assurez-vous que la case Apply once and for all est cochée.
+
+Puis apply et okay.
 
 
 
