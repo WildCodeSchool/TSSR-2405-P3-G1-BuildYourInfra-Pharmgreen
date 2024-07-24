@@ -1,51 +1,38 @@
-# Chargement du fichier de configuration
-$config = Import-Csv -Delimiter '=' -Path 'config.txt' | foreach { $obj = @{}; $obj[$_.ServerName] = $_.IPAddress; $obj }
+# Importer le fichier de configuration
+$config = Get-Content -Path "config.txt" | ForEach-Object {
+    $key, $value = $_ -split '='
+    [PSCustomObject]@{Key = $key; Value = $value}
+} | Group-Object -Property Key | ForEach-Object {
+    $obj = New-Object PSObject -Property @{
+        Key = $_.Name
+        Value = ($_.Group | Select-Object -First 1).Value
+    }
+    $obj.PSObject.Properties.Remove("Group")
+    $obj
+}
 
-# Définition des variables à partir du fichier de configuration
-$serverName = $config['ServerName']
-$ipAddress = $config['IPAddress']
-$subnetMask = $config['SubnetMask']
-$gateway = $config['Gateway']
-$dns = $config['DNS']
-$domainName = $config['DomainName']
-$domainAdminUser = $config['DomainAdminUser']
-$domainAdminPassword = $config['DomainAdminPassword']
+# Convertir les paramètres de configuration en variables
+foreach ($item in $config) {
+    Set-Variable -Name $item.Key -Value $item.Value
+}
 
-# Définition des informations d'identification pour l'administrateur de domaine
-$secPassword = ConvertTo-SecureString $domainAdminPassword -AsPlainText -Force
-$domainAdminCred = New-Object System.Management.Automation.PSCredential ($domainAdminUser, $secPassword)
+# Convertir InstallDNS en booléen
+$InstallDNS = [System.Convert]::ToBoolean($InstallDNS)
 
-# Configuration des paramètres réseau
-Write-Host "Configuration des paramètres réseau..."
-New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress $ipAddress -PrefixLength 24 -DefaultGateway $gateway
-Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses $dns
+# Installer la fonctionnalité AD DS
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
-# Renommage du serveur
-Write-Host "Renommage du serveur en $serverName..."
-Rename-Computer -NewName $serverName -Force -Restart
-
-# Attente du redémarrage du serveur
-Start-Sleep -Seconds 60
-
-# Installation des fonctionnalités nécessaires
-Write-Host "Installation du rôle AD-DS..."
-Install-WindowsFeature AD-Domain-Services
-
-# Promotion du serveur en tant que contrôleur de domaine
-Write-Host "Promotion du serveur en tant que contrôleur de domaine..."
+# Importer le module AD DS
 Import-Module ADDSDeployment
-Install-ADDSDomainController `
-    -DomainName $domainName `
-    -InstallDns `
-    -Credential $domainAdminCred `
-    -DatabasePath "C:\Windows\NTDS" `
-    -LogPath "C:\Windows\NTDS" `
-    -SysvolPath "C:\Windows\SYSVOL" `
-    -NoRebootOnCompletion `
+
+# Créer le domaine
+$SafeModeAdminPassword = ConvertTo-SecureString $SafeModeAdminPassword -AsPlainText -Force
+
+Install-ADDSForest `
+    -DomainName $DomainName `
+    -SafeModeAdministratorPassword $SafeModeAdminPassword `
+    -InstallDNS:$InstallDNS `
+    -DomainNetbiosName $DomainNetbiosName `
     -Force
 
-# Rejoindre le domaine
-Write-Host "Rejoindre le domaine $domainName..."
-Add-Computer -DomainName $domainName -Credential $domainAdminCred -Force -Restart
 
-Write-Host "Script terminé. Le serveur va redémarrer."
