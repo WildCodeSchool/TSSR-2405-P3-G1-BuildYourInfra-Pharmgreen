@@ -52,3 +52,12 @@ L'équipe présentée au point précédent vient d'être recrutée pour mettre e
 | Brice  SM  | GPO Sécurité et Standards<br>Script automatisation du serveur Core pour rejoindre ADDS<br>Documentation             |
 | Vanessa  |GPO Sécurité                                                         |
 
+### Sprint 3
+
+| NOM      | TÂCHES                                                              |
+|----------|---------------------------------------------------------------------|
+| Ronan    | Script automatisation du serveur Core pour rejoindre ADDS<br>Documentation |         |
+| Philippe |Mise en place du pfsense et des règles du parefeu<br> Documentation|
+| Karim  PO  |Mise en place du routeur vyos<br>Documentation|
+| Brice  SM  | Mise en place du pfsense et des règles du parefe<br>mise en place de la télémétrie<br>Documentation             |
+| Vanessa  |GPO Sécurité                                                         |
