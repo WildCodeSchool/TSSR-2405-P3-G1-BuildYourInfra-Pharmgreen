@@ -8,7 +8,16 @@
 Mettre en place une infrastructure réseau pour la société **Pharmgreen**
 </p>
 
+**Mise en pratique des compétences suivantes :**
+
+- Analyser les besoins techniques et fonctionnels
+- Mettre en place des objectifs et réaliser un suivi
+- Créer, gérer, faire évoluer une architecture réseau
+- Réaliser un projet en équipe
+- Documenter toutes les étapes
+
 ## Sommaire
+
 1- Présentation de l'équipe 
 
 2- Présentation du projet et son contexte
