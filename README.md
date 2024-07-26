@@ -8,15 +8,6 @@
 <p align="center"> Mettre en place une infrastructure réseau pour la société Pharmgreen
 </p>
 
-
-**Mise en pratique des compétences suivantes :**
-
-- Analyser les besoins techniques et fonctionnels
-- Mettre en place des objectifs et réaliser un suivi
-- Créer, gérer, faire évoluer une architecture réseau
-- Réaliser un projet en équipe
-- Documenter toutes les étapes
-
 ## Sommaire
 
 **1 - Présentation de l'équipe**
@@ -27,7 +18,15 @@
 
 **4-  Choix Techniques**
 
-## L'équipe est composée de
+**Mise en pratique des compétences suivantes :**
+
+- Analyser les besoins techniques et fonctionnels
+- Mettre en place des objectifs et réaliser un suivi
+- Créer, gérer, faire évoluer une architecture réseau
+- Réaliser un projet en équipe
+- Documenter toutes les étapes
+
+## L'équipe est composée de :
 
 - Brice
 - Karim
@@ -35,7 +34,7 @@
 - Ronan
 - Vanessa
 
-## Le projet et son contexte
+## Le projet et son contexte :
 
 **Pharmgreen** se positionne comme un pionnier dans le domaine de la santé en proposant des dispositifs médicaux innovants d'origine végétale, répondant ainsi à une demande croissante pour des solutions de santé naturelles et respectueuses de l'environnement. Grâce à des procédés de fabrication innovants et des collaborations avec des experts en botanique et en médecine naturelle, elle s'engage à fournir des produits de haute qualité, bénéfiques à la fois pour les patients et pour la planète. Son fondateur est de Lyon, et a décidé d’implanter les locaux dans sa ville natale.
 
@@ -49,8 +48,6 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
  - Chaque début de sprint, définir les objectifs du sprint
  - Chaque fin de sprint, mettre les objectifs réalisés ou non dans un fichier "Suivi des objectifs"
  - Chaque fin de sprint, mettre les différentes tâches réalisés par chaque membre du groupe
-
-
 
 
 ## Rôles par sprint
