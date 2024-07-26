@@ -44,6 +44,14 @@ L'équipe présentée au point précédent vient d'être recrutée pour mettre e
 Le projet est découpé en 11 sprints de 11 semaines.
 En début de sprint, le groupe abordera une nouvelle thématique afin de le mettre en place sur l’infrastructure réseau.
 
+## Le suivi des objectifs :
+
+ - Chaque début de sprint, définir les objectifs du sprint
+ - Chaque fin de sprint, mettre les objectifs réalisés ou non dans un fichier "Suivi des objectifs"
+ - Chaque fin de sprint, mettre les différentes tâches réalisés par chaque membre du groupe
+
+
+
 
 ## Rôles par sprint
 ### Sprint 1
