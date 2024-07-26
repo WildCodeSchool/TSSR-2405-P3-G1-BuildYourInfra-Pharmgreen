@@ -19,13 +19,13 @@
 
 ## Sommaire
 
-1- Présentation de l'équipe 
+**1 - Présentation de l'équipe**
 
-2- Présentation du projet et son contexte
+**2 - Présentation du projet et son contexte**
 
-3- Roles par Sprint
+**3 - Roles par Sprint**
 
-4- Choix Techniques
+**4-  Choix Techniques**
 
 ## L'équipe est composée de
 
