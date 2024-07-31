@@ -80,10 +80,3 @@
 
 ![Capture d'écran 2024-07-31 161602](https://github.com/user-attachments/assets/c970b0f0-30bf-4255-8122-a171b8ad0031)
 
-
-
-### Remarques supplémentaires
-- **Notifications et alertes :** Configurez des notifications par e-mail ou des alertes pour être informé en cas de problème avec les sauvegardes.
-- **Test de restauration :** Périodiquement, effectuez des tests de restauration pour vous assurer que les sauvegardes sont exploitables en cas de besoin.
-
-En suivant ces étapes, vous pouvez configurer une solution de sauvegarde fiable pour les dossiers partagés des utilisateurs sur le RAID 1, avec des sauvegardes automatiques hebdomadaires.
