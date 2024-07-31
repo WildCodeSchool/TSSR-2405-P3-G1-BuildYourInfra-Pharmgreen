@@ -31,3 +31,59 @@
 1. **Vérifiez la configuration RAID :**
    - Assurez-vous que le RAID 1 fonctionne correctement en vérifiant l'état des disques dans le gestionnaire de disques.
    - Testez le fonctionnement en écrivant et en lisant des données sur le volume RAID.
+  
+## Installation d'une sauvegarde planifiée des dossiers partagés sur le RAID 1
+
+### Étape 1 : Installer et configurer Windows Server Backup
+1. **Installer Windows Server Backup :**
+   - Ouvrez le "Gestionnaire de serveur" (Server Manager).
+   - Allez dans "Gérer" > "Ajouter des rôles et fonctionnalités".
+   - Suivez l'assistant pour installer la fonctionnalité "Windows Server Backup".
+
+![Capture d'écran 2024-07-31 160809](https://github.com/user-attachments/assets/1b2895b6-a79e-492e-b55b-f12e90750275)
+
+2. **Ouvrir Windows Server Backup :**
+   - Accédez à Windows Server Backup via le menu Démarrer ou le Gestionnaire de serveur.
+
+### Étape 3 : Configurer une sauvegarde planifiée
+1. **Planifier la sauvegarde :**
+   - Dans Windows Server Backup, allez dans "Local Backup"
+   - Cliquez sur "Backup Schedule" pour lancer l'assistant de planification de sauvegarde.
+
+![Capture d'écran 2024-07-31 160929](https://github.com/user-attachments/assets/d116ffca-3ed1-41c1-a53c-6708cfef5e6b)
+
+2. **Sélectionner le type de sauvegarde :**
+   - Choisissez "Custom" pour spécifier les dossiers ou volumes à sauvegarder.
+
+![Capture d'écran 2024-07-31 161431](https://github.com/user-attachments/assets/236fca59-1d5f-43be-a99a-5afec0990418)
+
+3. **Sélectionner les éléments à sauvegarder :**
+   - Ajoutez les dossiers partagés des utilisateurs que vous souhaitez sauvegarder.
+
+![Capture d'écran 2024-07-31 161438](https://github.com/user-attachments/assets/5fcebc55-68f6-43ec-a229-0cd4311b4f0c)
+
+4. **Planifier la sauvegarde :**
+   - Configurez la sauvegarde pour s'exécuter au moins une fois par semaine.
+   - Sélectionnez un jour et une heure où l'impact sur les performances sera minimal.
+
+![Capture d'écran 2024-07-31 162203](https://github.com/user-attachments/assets/6c0accd1-e318-4bdc-86de-58119cac0d6b)
+
+5. **Sélectionner la destination de la sauvegarde :**
+   - Choisissez "Back up to a volume" et sélectionnez le volume RAID 1 (D:).
+   - Si le RAID 1 est utilisé pour d'autres données, assurez-vous qu'il a suffisamment d'espace libre pour stocker les sauvegardes.
+
+![Capture d'écran 2024-07-31 161548](https://github.com/user-attachments/assets/68b9a192-783a-40ab-b67f-a38dfc26a720)
+
+6. **Finaliser la configuration :**
+   - Vérifiez les paramètres de sauvegarde.
+   - Cliquez sur "Finish" pour compléter la configuration.
+
+![Capture d'écran 2024-07-31 161602](https://github.com/user-attachments/assets/c970b0f0-30bf-4255-8122-a171b8ad0031)
+
+
+
+### Remarques supplémentaires
+- **Notifications et alertes :** Configurez des notifications par e-mail ou des alertes pour être informé en cas de problème avec les sauvegardes.
+- **Test de restauration :** Périodiquement, effectuez des tests de restauration pour vous assurer que les sauvegardes sont exploitables en cas de besoin.
+
+En suivant ces étapes, vous pouvez configurer une solution de sauvegarde fiable pour les dossiers partagés des utilisateurs sur le RAID 1, avec des sauvegardes automatiques hebdomadaires.
