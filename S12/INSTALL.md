@@ -83,17 +83,33 @@
 
 ## Restrictions Horaires pour Utilisateurs Non-Admin sur Windows Server 2022
 
-### 1. Bloquer la Connexion pour les Utilisateurs Non-Admin 
+### Création et application de la GPO
 
-#### **Ouvrez "Active Directory Users and Computers" :**
+#### Ouvrir la console de gestion des stratégies de groupe
 
-- Cliquez sur le bouton **Start**, tapez **"dsa.msc"** et appuyez sur **Enter**.
+- Tapez `gpmc.msc` dans la boîte de dialogue Exécuter.
 
-**Modifier les Propriétés des Utilisateurs Non-Admin :**
+#### Créer une nouvelle GPO
 
-- Dans la fenêtre **"Active Directory Users and Computers"**, localisez l'utilisateur dans l'unité d'organisation appropriée.
-- Cliquez avec le bouton droit sur l'utilisateur et sélectionnez **Properties**.
-- Allez dans l'onglet **Account** et configurez les restrictions nécessaires.
+- Clic droit sur l'OU souhaité -> **Create a GPO in this domain, and Link it here...**.
+- Nommez la GPO (par exemple, "Block NonAdmin Logon").
+
+![Capture d'écran 2024-08-02 151009](https://github.com/user-attachments/assets/6302a855-3929-4f00-a547-94233651dd82)
+
+#### Éditer la GPO
+
+- Clic droit sur la GPO nouvellement créée -> **Edit**.
+
+#### Configurer la GPO
+
+- Allez dans `Computer Configuration` -> `Policies` -> `Windows Settings` -> `Security Settings` -> `Local Policies` -> `User Rights Assignment`.
+- Double-cliquez sur **Deny log on locally** et ajoutez les utilisateurs ou groupes de l'OU "NonAdmins".
+
+![Capture d'écran 2024-08-02 151122](https://github.com/user-attachments/assets/e4ea7b86-87c6-438a-99c5-0e19c2b5be32)
+
+![Capture d'écran 2024-08-02 151213](https://github.com/user-attachments/assets/478122cc-0c69-4baf-a00d-0f1ef0739fa5)
+
+- Double-cliquez sur **Deny log on through Remote Desktop Services** et ajoutez également les utilisateurs ou groupes de l'OU que vous avez créez.
 
 ## Connexion Autorisée de 7h30 à 20h, du Lundi au Samedi
 
