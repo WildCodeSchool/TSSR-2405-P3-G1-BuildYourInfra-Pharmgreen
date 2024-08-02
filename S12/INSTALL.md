@@ -80,3 +80,46 @@
 
 ![Capture d'écran 2024-07-31 161602](https://github.com/user-attachments/assets/c970b0f0-30bf-4255-8122-a171b8ad0031)
 
+
+## Restrictions Horaires pour Utilisateurs Non-Admin sur Windows Server 2022
+
+### 1. Bloquer la Connexion pour les Utilisateurs Non-Admin 
+
+#### **Ouvrez "Active Directory Users and Computers" :**
+
+- Cliquez sur le bouton **Start**, tapez **"dsa.msc"** et appuyez sur **Enter**.
+
+**Modifier les Propriétés des Utilisateurs Non-Admin :**
+
+- Dans la fenêtre **"Active Directory Users and Computers"**, localisez l'utilisateur dans l'unité d'organisation appropriée.
+- Cliquez avec le bouton droit sur l'utilisateur et sélectionnez **Properties**.
+- Allez dans l'onglet **Account** et configurez les restrictions nécessaires.
+
+## Connexion Autorisée de 7h30 à 20h, du Lundi au Samedi
+
+### 1. Mettre en place des horaires de connexion avec AD
+
+#### **Ouvrez "Active Directory Users and Computers" :**
+
+- Cliquez sur le bouton **Start**, tapez **"Active Directory Users and Computers "** et appuyez sur **Enter**.
+
+![Capture d'écran 2024-08-02 114437](https://github.com/user-attachments/assets/dcf02279-90b9-45c5-b5a1-0ba021d319e8)
+
+**Configurer les Restrictions Horaires :**
+
+- Localisez l'utilisateur dans l'unité d'organisation appropriée.
+- Cliquez avec le bouton droit sur l'utilisateur et sélectionnez **Properties**.
+
+ ![Capture d'écran 2024-08-02 144452](https://github.com/user-attachments/assets/a571e382-c9e3-4cbd-8b8e-7d2f8a984ba3)
+
+- Dans l'onglet **Account**, cliquez sur **Logon Hours**.
+
+![Capture d'écran 2024-08-02 122257](https://github.com/user-attachments/assets/ea8b33f0-924d-4c98-a299-cdf54c2e4f00)
+
+- Configurez les heures de connexion autorisées de 7h30 à 20h du lundi au samedi.
+
+![Capture d'écran 2024-08-02 122618](https://github.com/user-attachments/assets/a3aa8aad-31ee-430f-beb5-69a047549499)
+
+
+
+
