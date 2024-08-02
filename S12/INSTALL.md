@@ -109,7 +109,7 @@
 
 ![Capture d'écran 2024-08-02 151213](https://github.com/user-attachments/assets/478122cc-0c69-4baf-a00d-0f1ef0739fa5)
 
-- Double-cliquez sur **Deny log on through Remote Desktop Services** et ajoutez également les utilisateurs ou groupes de l'OU que vous avez créez.
+- Double-cliquez sur **Deny log on through Remote Desktop Services** et faites la même chose que précedemment.-
 
 ## Connexion Autorisée de 7h30 à 20h, du Lundi au Samedi
 
