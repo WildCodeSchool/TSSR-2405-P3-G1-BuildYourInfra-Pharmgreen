@@ -89,7 +89,7 @@ Noter les numéros des disques que nous utiliserons pour le RAID 1 (ici 0 et 1).
 
 *DISKPART> create volume mirror disk=1,2*
 
-*DISKPART> assign letter=E*
+*DISKPART> assign letter=F*
 
 *DISKPART> exit*
 
@@ -98,7 +98,7 @@ Noter les numéros des disques que nous utiliserons pour le RAID 1 (ici 0 et 1).
 
 ### Formater le volume en NTFS :
 
-*Format-Volume -DriveLetter E -FileSystem NTFS -NewFileSystemLabel "RAID1Volume"*
+*Format-Volume -DriveLetter F -FileSystem NTFS -NewFileSystemLabel "RAID1Volume"*
 
 <img width="1097" alt="Capture d’écran 2024-08-03 à 11 30 47" src="https://github.com/user-attachments/assets/45011098-b246-4acd-ae15-feea515c7787">
 
@@ -114,9 +114,15 @@ Noter les numéros des disques que nous utiliserons pour le RAID 1 (ici 0 et 1).
 
 *Install-WindowsFeature Windows-Server-Backup*
 
+<img width="905" alt="Capture d’écran 2024-08-05 à 11 03 15" src="https://github.com/user-attachments/assets/0a8480b4-ba27-49a9-b140-4e03ab1599cc">
+
+
 ### Lancer la sauvegarde
 
-*wbadmin start backup -backupTarget:E: -include:C: -allCritical -quiet*
+*wbadmin start backup -backupTarget:F: -include:C: -allCritical -quiet*
+Et obtenir ce resultat:
+
+<img width="844" alt="Capture d’écran 2024-08-05 à 11 07 31" src="https://github.com/user-attachments/assets/3fde2032-1a09-4a7f-88aa-5a71f096fd5a">
 
 ## Reparamétrer le bootloader
 
@@ -124,11 +130,20 @@ Noter les numéros des disques que nous utiliserons pour le RAID 1 (ici 0 et 1).
 
 ### Choisir "Réparer votre ordinateur" dans l'écran d'installation de Windows Server.
 
+<img width="723" alt="Capture d’écran 2024-08-05 à 11 09 04" src="https://github.com/user-attachments/assets/7726cfd8-f21b-4e5a-983e-c2800f4abdce">
+
+
 ### Sélectionner "Dépannage" puis "Invite de commandes".
+
+ <img width="1462" alt="Capture d’écran 2024-08-05 à 11 09 17" src="https://github.com/user-attachments/assets/c4b6c2d7-2bf4-420d-8241-f60f37113119">
+
 
 ### Taper les commandes suivantes pour récuperer la sauvegarde
 
-*wbadmin get versions -backupTarget:D:*
+*wbadmin get versions -backupTarget:F:*
+
+<img width="836" alt="Capture d’écran 2024-08-05 à 11 30 25" src="https://github.com/user-attachments/assets/491fc564-e1cc-41c4-963e-bd81cc44650e">
+
 
 *wbadmin start recovery -version:<VersionIdentifier> -itemType:Volume -items:C: -recoveryTarget:E: -quiet
 
