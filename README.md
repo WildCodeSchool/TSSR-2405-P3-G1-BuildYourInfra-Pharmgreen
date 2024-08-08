@@ -186,6 +186,16 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 - **Communauté Active** : Bénéficie d'une vaste communauté d'utilisateurs et de développeurs, offrant un support et des mises à jour régulières.
 
 
+### Routeur : Vyos
+
+- **Basé sur Linux** : Vyos utilise Linux comme base, assurant une stabilité et une large compatibilité avec les logiciels et matériels existants.
+- **CLI (Command Line Interface) Intuitive** : Il offre une interface en ligne de commande similaire à celle des routeurs commerciaux comme Cisco, facilitant la transition pour les professionnels du réseau.
+- **Fonctionnalités Riches** : Vyos prend en charge une variété de protocoles et de fonctionnalités de routage, tels que OSPF, BGP, et VPN (OpenVPN, IPsec), ce qui le rend très polyvalent pour différents scénarios réseau.
+- **Personnalisation et Extensibilité** : Grâce à son architecture open source, Vyos peut être personnalisé et étendu selon les besoins spécifiques des utilisateurs.
+- **Support de Virtualisation** : Vyos peut être déployé sur des machines physiques, mais aussi en tant que machine virtuelle, ce qui en fait un choix flexible pour les environnements cloud et virtualisés.
+
+
+
 ## Difficultés rencontrées : 
 
 ## Solutions trouvées :
