@@ -157,6 +157,17 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 
 ## Choix Techniques : 
 
+
+
+### Surveillance réseau : Nagios 
+
+- **Open Source** : Nagios est basé sur une architecture open source, offrant une flexibilité et une personnalisation sans frais de licence.
+- **Surveillance Complète** : Capable de surveiller les systèmes, les réseaux et les infrastructures, fournissant des alertes en temps réel pour les problèmes de performance ou de disponibilité.
+- **Évolutivité** : Peut être déployé pour surveiller des petits réseaux jusqu'aux grandes infrastructures complexes.
+- **Extensibilité** : Prend en charge de nombreux plugins et extensions, permettant une adaptation aux besoins spécifiques.
+- **Interface Web** : Administration et visualisation des données via une interface web conviviale, facilitant la gestion et le monitoring.
+
+
 ### ERP : GLPI 
 
 - **Modularité** : GPLI propose des modules flexibles et indépendants, permettant une personnalisation et une scalabilité adaptées aux besoins évolutifs de l'entreprise.
