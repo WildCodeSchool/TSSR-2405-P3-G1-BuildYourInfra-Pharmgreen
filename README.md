@@ -155,7 +155,7 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 | Brice   PO |             |
 
 
-## Choix Techniques : 
+## Choix Techniques Applications : 
 
 
 
