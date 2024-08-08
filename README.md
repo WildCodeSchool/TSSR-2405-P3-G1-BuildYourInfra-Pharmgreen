@@ -159,20 +159,20 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 
 ### ERP : GLPI 
 
-**Modularité** : GPLI propose des modules flexibles et indépendants, permettant une personnalisation et une scalabilité adaptées aux besoins évolutifs de l'entreprise.
-**Intégration** : Il offre une compatibilité avec les systèmes existants et facilite l'intégration avec d'autres logiciels, assurant une fluidité des processus.
-**Technologie Web** : Accessible via un navigateur, GPLI permet une utilisation décentralisée, idéale pour les entreprises multi-sites ou avec des équipes distantes.
-**Sécurité** : Des fonctionnalités robustes de sécurité pour protéger les données sensibles de l'entreprise.
-**Coût** : Souvent plus abordable que les ERP propriétaires, avec des coûts de licence et de maintenance réduits.
+- **Modularité** : GPLI propose des modules flexibles et indépendants, permettant une personnalisation et une scalabilité adaptées aux besoins évolutifs de l'entreprise.
+- **Intégration** : Il offre une compatibilité avec les systèmes existants et facilite l'intégration avec d'autres logiciels, assurant une fluidité des processus.
+- **Technologie Web** : Accessible via un navigateur, GPLI permet une utilisation décentralisée, idéale pour les entreprises multi-sites ou avec des équipes distantes.
+- **Sécurité** : Des fonctionnalités robustes de sécurité pour protéger les données sensibles de l'entreprise.
+- **Coût** : Souvent plus abordable que les ERP propriétaires, avec des coûts de licence et de maintenance réduits.
 
 
 ### Firewall : Pfsense 
 
-1. **Open Source** : pfSense est basé sur une architecture open source, offrant une flexibilité et une possibilité de personnalisation importantes sans frais de licence.
-2. **Fonctionnalités Avancées** : Inclut des fonctionnalités de pare-feu, VPN, NAT, et filtrage de paquets, adaptées aux besoins de sécurité réseau avancés.
-3. **Évolutivité** : Peut être déployé sur des configurations matérielles variées, des petits réseaux aux grandes entreprises.
-4. **Interface Web** : Administration facile via une interface utilisateur web intuitive, simplifiant la gestion et la configuration.
-5. **Communauté Active** : Bénéficie d'une vaste communauté d'utilisateurs et de développeurs, offrant un support et des mises à jour régulières.
+- **Open Source** : pfSense est basé sur une architecture open source, offrant une flexibilité et une possibilité de personnalisation importantes sans frais de licence.
+- **Fonctionnalités Avancées** : Inclut des fonctionnalités de pare-feu, VPN, NAT, et filtrage de paquets, adaptées aux besoins de sécurité réseau avancés.
+- **Évolutivité** : Peut être déployé sur des configurations matérielles variées, des petits réseaux aux grandes entreprises.
+- **Interface Web** : Administration facile via une interface utilisateur web intuitive, simplifiant la gestion et la configuration.
+- **Communauté Active** : Bénéficie d'une vaste communauté d'utilisateurs et de développeurs, offrant un support et des mises à jour régulières.
 
 
 ## Difficultés rencontrées : 
