@@ -3,14 +3,16 @@
 ## En mettant en début de chaque script:
 
 #Definir repertoir des logs
+
 $LogDirectory = "E:\LOGS"
 if (-not (Test-Path -path $logDirectory)) {
 New-Item -Path $logDirectory -Itemtype Directory
 ｝
 
 #Nommer le fichier de log avec le nom du script
-$scriptname = $(Get-item $PSCommandPath). BaseName
-$logFile = "$logDirectory\SscriptName_$(Get-Date -Format ‘yyyyMMdd_HHmmss'). log"
+
+$Scriptname = $(Get-item $PSCommandPath). BaseName
+$LogFile = "$logDirectory\SscriptName_$(Get-Date -Format ‘yyyyMMdd_HHmmss'). log"
 
 #Rediriger les sorties standards et d'erreur
 
