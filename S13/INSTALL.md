@@ -13,7 +13,9 @@ $scriptname = $(Get-item $PSCommandPath). BaseName
 $logFile = "$logDirectory\SscriptName_$(Get-Date -Format ‘yyyyMMdd_HHmmss'). log"
 
 #Rediriger les sorties standards et d'erreur
+
 Start-Transcript -Path $logFile -Append
+
 <img width="847" alt="Capture d’écran 2024-08-07 à 14 36 36" src="https://github.com/user-attachments/assets/745b1389-ff6f-4975-b8ba-5c8988974e97">
 
 Et en conclusion des scripts:
