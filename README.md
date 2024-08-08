@@ -85,10 +85,10 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 
 | NOM      | TÂCHES                                                              |
 |----------|---------------------------------------------------------------------|
-| Ronan    | RAID 1 sur GUI , Sauvegarde dossiers partagés,Bloquer la connexion pour les utilisateurs non-admin  |         |
+| Ronan SM   | RAID 1 sur GUI , Sauvegarde dossiers partagés,Bloquer la connexion pour les utilisateurs non-admin  |         |
 | Philippe | Mise en place des Dossiers partagés, GPO Création de dossier personnel, Mise à jour de l'AD|
 | Karim  PO  |Mise en place de LAPS,Mise en place RAID1 sur Debian |
-| Brice  SM  | Mise en place des Dossiers partagés,Mise en place du RAID1 sur windows Server Core et soutien de Ronan sur la mise en place de la sauvegarde              |
+| Brice    | Mise en place des Dossiers partagés,Mise en place du RAID1 sur windows Server Core et soutien de Ronan sur la mise en place de la sauvegarde              |
 
 
 ### Sprint 5
@@ -96,6 +96,6 @@ En début de sprint, le groupe abordera une nouvelle thématique afin de le mett
 | NOM      | TÂCHES                                                              |
 |----------|---------------------------------------------------------------------|
 | Ronan    | Documentation, Installation de Nagios |         |
-| Philippe | Création des logs et installation de CMTrace, Installation de Nagios |
-| Karim  PO  |Création des logs et installation de CMTrace, installation de nagios |
-| Brice  SM  | Continuer la mise en place du Raid1 sur le windows server core , Création des logs et installation de CMTrace, Installation de Nagios            |
+| Philippe SM | Création des logs et installation de CMTrace, Installation de Nagios |
+| Karim    |Création des logs et installation de CMTrace, installation de nagios |
+| Brice   PO | Continuer la mise en place du Raid1 sur le windows server core , Création des logs et installation de CMTrace, Installation de Nagios            |
