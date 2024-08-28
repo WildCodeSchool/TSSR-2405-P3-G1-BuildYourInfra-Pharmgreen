@@ -1,4 +1,17 @@
-﻿# Importer les modules nécessaires
+
+#Definir repertoir des logs
+
+$LogDirectory = "E:\LOGS" if (-not (Test-Path -path $logDirectory)) { New-Item -Path $logDirectory -Itemtype Directory ｝
+
+#Nommer le fichier de log avec le nom du script
+
+$ScriptName = (Get-item $PSCommandPath). BaseName $LogFile = "$logDirectory\SscriptName_$(Get-Date -Format ‘yyyyMMdd_HHmmss'). log"
+
+#Rediriger les sorties standards et d'erreur
+
+Start-Transcript -Path $logFile -Append
+ 
+ # Importer les modules nécessaires
 Import-Module ActiveDirectory
 Import-Module ImportExcel
 
@@ -286,3 +299,5 @@ foreach ($user in $usersToCheck) {
     Write-Host "Désactivation de l'utilisateur $($user.SamAccountName)"
     Disable-ADAccount -Identity $user.SamAccountName
 }
+# Fin Journalisation
+Stop-Transcript
