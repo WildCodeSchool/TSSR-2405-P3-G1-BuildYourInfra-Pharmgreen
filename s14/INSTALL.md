@@ -13,12 +13,12 @@
 1. **Télécharger la dernière version d'IRedMail :**
    ```bash
    cd /opt
-   wget https://github.com/iredmail/iRedMail/archive/refs/tags/1.6.2.tar.gz -O iredmail.tar.gz
+   wget https://github.com/iredmail/iRedMail/archive/refs/tags/1.7.1.tar.gz -O iredmail.tar.gz
    ```
 2. **Extraire l'archive :**
    ```bash
    tar xvf iredmail.tar.gz
-   cd iRedMail-1.6.2/
+   cd iRedMail-1.7.1/
    ```
 3. **Lancer l'installation :**
    ```bash
@@ -26,15 +26,11 @@
    ```
    - Vous serez invité à choisir le chemin d'installation, acceptez le chemin par défaut.
    - Choisissez ensuite les services que vous souhaitez installer (Postfix, Dovecot, etc.).
-   - Lorsqu'on vous demande le nom de domaine, entrez `pharmgreen.com`.
+   - Lorsqu'on vous demande entrez le nom de domaine
    - Choisissez le backend pour stocker les données des utilisateurs (OpenLDAP, MySQL/MariaDB, etc.).
    - Suivez les autres instructions affichées à l'écran pour terminer l'installation.
 
-### Étape 4 : Configurer le DNS pour le domaine pharmgreen.com
-Pour que votre serveur de messagerie fonctionne correctement, vous devez configurer certains enregistrements DNS pour `pharmgreen.com` :
-
 ### Étape 2 : Connecter le serveur mail au domaine 
-Ajouter des enregistrements DNS sur un serveur Windows Server 2022 se fait via le Gestionnaire DNS (DNS Manager). Voici les étapes à suivre pour ajouter des enregistrements DNS sur Windows Server 2022 :
 
 #### Ouvrir le Gestionnaire DNS
 
@@ -47,10 +43,10 @@ Ajouter des enregistrements DNS sur un serveur Windows Server 2022 se fait via l
 
 1. **Naviguer vers la zone de recherche directe (Forward Lookup Zones)** :
    - Dans le Gestionnaire DNS, développez l’arborescence à gauche pour trouver **Zones de recherche directe**.
-   - Cliquez sur la zone correspondant à votre domaine, par exemple `pharmgreen.com`.
+   - Cliquez sur la zone correspondant à votre domaine
    
 2. **Ajouter un enregistrement A :**
-   - Faites un clic droit sur la zone de votre domaine (`pharmgreen.com`) et sélectionnez **Nouvel hôte (A ou AAAA)...**.
+   - Faites un clic droit sur la zone de votre domaine et sélectionnez **Nouvel hôte (A ou AAAA)...**.
    - Dans la fenêtre qui s’ouvre :
      - **Nom** : Saisissez `mail` (ou laissez-le vide pour créer un enregistrement pour le domaine de base).
      - **Adresse IP** : Saisissez l'adresse IP de votre serveur de messagerie (par exemple, `192.168.1.10`).
@@ -60,17 +56,17 @@ Ajouter des enregistrements DNS sur un serveur Windows Server 2022 se fait via l
 #### Ajouter un Enregistrement MX (Mail Exchange)
 
 1. **Ajouter un enregistrement MX :**
-   - Faites un clic droit sur la zone de votre domaine (`pharmgreen.com`) et sélectionnez **Nouvel enregistrement MX...**.
+   - Faites un clic droit sur la zone de votre domaine  et sélectionnez **Nouvel enregistrement MX...**.
    - Dans la fenêtre qui s’ouvre :
      - **Nom** : Laissez vide ou mettez `@` pour indiquer le domaine racine.
-     - **Serveur de messagerie pleinement qualifié (FQDN)** : Entrez `mail.pharmgreen.com`.
+     - **Serveur de messagerie pleinement qualifié (FQDN)** : Entrez `mail.exemple.com`.
      - **Priorité** : Saisissez `10` ou une autre valeur. Un nombre plus bas signifie une priorité plus élevée.
    - Cliquez sur **OK** pour ajouter l'enregistrement MX.
 
 #### Ajouter un Enregistrement TXT pour SPF (Optionnel)
 
 1. **Ajouter un enregistrement TXT :**
-   - Faites un clic droit sur la zone de votre domaine (`pharmgreen.com`) et sélectionnez **Nouvel enregistrement TXT**.
+   - Faites un clic droit sur la zone de votre domaine  et sélectionnez **Nouvel enregistrement TXT**.
    - Dans la fenêtre qui s’ouvre :
      - **Nom** : Laissez vide ou mettez `@` pour indiquer le domaine racine.
      - **Données du texte** : Entrez la valeur `"v=spf1 mx ~all"`.
