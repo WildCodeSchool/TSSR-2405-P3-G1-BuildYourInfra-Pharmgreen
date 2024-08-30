@@ -126,7 +126,8 @@ Avant de commencer l'installation, assurez-vous que votre système est à jour.
 apt update && apt upgrade -y
 ```
 
-![Mise à jour](C1_update.png)
+![C2update](https://github.com/user-attachments/assets/24ca1d5e-7fa6-49a8-b3ef-351626e48e73)
+
 
 ## Étape 2 : Installation des dépendances
 
@@ -136,21 +137,11 @@ Installez Apache, MariaDB, Ruby, et d'autres dépendances nécessaires pour Redm
 apt install apache2 libapache2-mod-passenger mariadb-server certbot python3-certbot-apache ruby ruby-dev build-essential default-mysql-server default-libmysqlclient-dev libxml2-dev libxslt1-dev zlib1g-dev imagemagick libmagickwand-dev subversion
 ```
 
-![Installation des dépendances](C3_bdependandances.png)
+![C3_bdependandances](https://github.com/user-attachments/assets/c48b3c10-3c8a-41dc-9a81-1436fb6410aa)
 
-## Étape 3 : Configuration de la base de données
 
-### Sécurisation de MariaDB
 
-```bash
-mysql_secure_installation
-```
-
-Suivez les étapes pour sécuriser MariaDB.
-
-![Sécurisation MariaDB](C6_securedatabase.png)
-
-### Création de la base de données Redmine
+##  Étape 3 : Création de la base de données Redmine
 
 ```bash
 mysql -u root -p
@@ -160,13 +151,11 @@ GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```
+![C4_database](https://github.com/user-attachments/assets/398637dc-1469-4738-888d-b764daed64d8)
 
-![Création de la base de données](C4_database.png)
-![Vérification de la base de données](C5_database2.png)
+![C5_database2](https://github.com/user-attachments/assets/89f569a3-08fc-4732-ba06-187a5c41c867)
 
-## Étape 4 : Configuration de Redmine
-
-Téléchargez la version stable de Redmine, configurez le fichier `database.yml`, et installez les gems Ruby nécessaires.
+### Configuration de la base de données
 
 ### Configuration du fichier `database.yml`
 
@@ -174,7 +163,23 @@ Téléchargez la version stable de Redmine, configurez le fichier `database.yml`
 nano /var/www/redmine-5.0/config/database.yml
 ```
 
-![Configuration database.yml](C7_modifdatabas.png)
+
+### Sécurisation de MariaDB
+
+```bash
+mysql_secure_installation
+```
+Suivez les étapes pour sécuriser MariaDB.
+
+![C6_securedatabase](https://github.com/user-attachments/assets/fc8ce757-f02d-45b3-90ea-1947a8f622f7)
+
+
+## Étape 4 : Configuration de Redmine
+
+Téléchargez la version stable de Redmine, configurez le fichier `database.yml`, et installez les gems Ruby nécessaires.
+
+
+
 
 ### Charger les données par défaut de Redmine
 
@@ -184,7 +189,9 @@ RAILS_ENV=production bundle exec rake db:migrate
 RAILS_ENV=production REDMINE_LANG=en bundle exec rake redmine:load_default_data
 ```
 
-![Chargement des données par défaut](C8chargedonneesdefaut.png)
+![C8chargedonneesdefaut](https://github.com/user-attachments/assets/12f317ef-85e1-4d06-bfc5-3a167e783439)
+
+
 
 ## Étape 5 : Configuration d'Apache pour Redmine
 
@@ -196,7 +203,9 @@ Créez un fichier de configuration Apache pour servir Redmine et activez-le.
 nano /etc/apache2/sites-available/redmine.conf
 ```
 
-![Configuration Apache](C9_confapach.png)
+![C9_confapach](https://github.com/user-attachments/assets/174c47c2-a9a2-4c02-9054-a0c249e213de)
+
+
 
 ### Redémarrez Apache
 
@@ -204,11 +213,14 @@ nano /etc/apache2/sites-available/redmine.conf
 systemctl restart apache2
 ```
 
+![C10_verifapach](https://github.com/user-attachments/assets/45573719-d23f-408b-a483-59beb21cd314)
+
 ## Conclusion
 
 Redmine est maintenant installé et accessible via votre navigateur. Connectez-vous avec les identifiants par défaut et configurez-le selon vos besoins.
 
-![Redmine installé](C12_bingo.png)
+![C12_bingo](https://github.com/user-attachments/assets/e19cdca9-07bf-45eb-8bc1-a803e85297f5)
+
 
 # Difficultés Rencontrées lors de l'Installation de Redmine
 
