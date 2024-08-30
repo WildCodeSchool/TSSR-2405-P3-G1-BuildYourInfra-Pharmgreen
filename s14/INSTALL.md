@@ -285,34 +285,34 @@ Ce document explique comment créer un alias DNS pour accéder à l'application 
 
 1. Connectez-vous à l'interface de gestion de votre serveur DNS. Cela peut être une interface web (comme celle fournie par votre hébergeur) ou un serveur DNS interne que vous gérez.
    
-   ![Capture d'écran de l'accès à l'interface DNS](path/to/screenshot1.png)
-
+![1_dnsmanager](https://github.com/user-attachments/assets/77a6a009-22ce-438b-9dbb-683112a754b9)
+   
 2. Recherchez la section où vous pouvez gérer les enregistrements DNS pour le domaine `pharmgreen.com`.
 
-   ![Capture d'écran de la gestion des enregistrements DNS](path/to/screenshot2.png)
 
+ 
 ## Étape 2 : Créer un Alias CNAME
 
 1. Cliquez sur l'option pour ajouter un nouvel enregistrement DNS.
 
-   ![Capture d'écran de l'ajout d'un enregistrement DNS](path/to/screenshot3.png)
 
 2. Sélectionnez `CNAME` comme type d'enregistrement.
 
-3. Remplissez les champs requis :
+Remplissez les champs requis :
    - **Nom** : Entrez `redmine` pour créer l'alias `redmine.pharmgreen.com`.
    - **Type** : Sélectionnez `CNAME`.
    - **Cible** : Entrez `srv-deb.pharmgreen.com`.
 
-   ![Capture d'écran de la configuration de l'enregistrement CNAME](path/to/screenshot4.png)
+![2_createAlias](https://github.com/user-attachments/assets/ca7eb4ee-8957-4116-b32d-923b1a282f43)
 
-4. Enregistrez l'enregistrement CNAME.
 
-## Étape 3 : Configurer Apache pour Répondre à l'Alias
+3. Enregistrez l'enregistrement CNAME.
 
-1. Connectez-vous au serveur `SRV-DEB` et éditez le fichier de configuration d'Apache pour Redmine.
-   
-   ```bash
-   nano /etc/apache2/sites-available/redmine.conf
+## Étape 3 : Vérification
+
+Connectez-vous à http://redmine.pharmgreen.com
+
+![3_verif](https://github.com/user-attachments/assets/2bc23571-e504-42db-8c20-861eb3198698)
+
 
    
