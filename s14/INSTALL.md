@@ -112,3 +112,195 @@ Si vous souhaitez que les utilisateurs de Windows Server 2022 puissent utiliser 
 2. **Tester l'envoi et la réception d'emails :**
    - Utilisez un client de messagerie (comme Thunderbird ou Outlook) pour vous connecter à votre serveur de messagerie via IMAP/SMTP.
 
+------
+
+# Installation de Redmine sur Debian 12
+
+Ce guide décrit l'installation de Redmine sur un serveur Debian 12 en utilisant Apache, MariaDB.
+
+## Étape 1 : Mise à jour du système
+
+Avant de commencer l'installation, assurez-vous que votre système est à jour.
+
+```bash
+apt update && apt upgrade -y
+```
+
+![Mise à jour](C1_update.png)
+
+## Étape 2 : Installation des dépendances
+
+Installez Apache, MariaDB, Ruby, et d'autres dépendances nécessaires pour Redmine.
+
+```bash
+apt install apache2 libapache2-mod-passenger mariadb-server certbot python3-certbot-apache ruby ruby-dev build-essential default-mysql-server default-libmysqlclient-dev libxml2-dev libxslt1-dev zlib1g-dev imagemagick libmagickwand-dev subversion
+```
+
+![Installation des dépendances](C3_bdependandances.png)
+
+## Étape 3 : Configuration de la base de données
+
+### Sécurisation de MariaDB
+
+```bash
+mysql_secure_installation
+```
+
+Suivez les étapes pour sécuriser MariaDB.
+
+![Sécurisation MariaDB](C6_securedatabase.png)
+
+### Création de la base de données Redmine
+
+```bash
+mysql -u root -p
+CREATE DATABASE redmine CHARACTER SET utf8mb4;
+CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'votre_mot_de_passe';
+GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+![Création de la base de données](C4_database.png)
+![Vérification de la base de données](C5_database2.png)
+
+## Étape 4 : Configuration de Redmine
+
+Téléchargez la version stable de Redmine, configurez le fichier `database.yml`, et installez les gems Ruby nécessaires.
+
+### Configuration du fichier `database.yml`
+
+```bash
+nano /var/www/redmine-5.0/config/database.yml
+```
+
+![Configuration database.yml](C7_modifdatabas.png)
+
+### Charger les données par défaut de Redmine
+
+```bash
+bundle exec rake generate_secret_token
+RAILS_ENV=production bundle exec rake db:migrate
+RAILS_ENV=production REDMINE_LANG=en bundle exec rake redmine:load_default_data
+```
+
+![Chargement des données par défaut](C8chargedonneesdefaut.png)
+
+## Étape 5 : Configuration d'Apache pour Redmine
+
+Créez un fichier de configuration Apache pour servir Redmine et activez-le.
+
+### Configuration du fichier `redmine.conf`
+
+```bash
+nano /etc/apache2/sites-available/redmine.conf
+```
+
+![Configuration Apache](C9_confapach.png)
+
+### Redémarrez Apache
+
+```bash
+systemctl restart apache2
+```
+
+## Conclusion
+
+Redmine est maintenant installé et accessible via votre navigateur. Connectez-vous avec les identifiants par défaut et configurez-le selon vos besoins.
+
+![Redmine installé](C12_bingo.png)
+
+# Difficultés Rencontrées lors de l'Installation de Redmine
+
+Lors de l'installation de Redmine, plusieurs difficultés peuvent survenir, notamment en raison de problèmes de compatibilité entre les différentes versions des logiciels requis. Voici une liste des principales difficultés rencontrées et comment les résoudre.
+
+## Problèmes de Compatibilité
+
+### Versions de Ruby et des Gems
+
+L'une des premières difficultés rencontrées lors de l'installation de Redmine concerne la compatibilité entre les versions de Ruby et les gems nécessaires. Il est important de s'assurer que la version de Ruby installée est compatible avec les gems spécifiées dans le projet. Par exemple, certaines gems modernes nécessitent une version plus récente de Ruby, tandis que d'autres peuvent ne pas fonctionner avec des versions trop récentes.
+
+**Solution :**
+- Vérifiez la version de Ruby installée en utilisant la commande `ruby -v`.
+- Assurez-vous que cette version est compatible avec les gems nécessaires en consultant le fichier `Gemfile` du projet et la documentation des gems.
+- Si nécessaire, installez une version différente de Ruby à l'aide de gestionnaires comme `rbenv` ou `rvm`.
+
+### Problèmes avec Bundler
+
+Bundler est un gestionnaire de dépendances pour Ruby. Il est essentiel de s'assurer que la version de Bundler utilisée est compatible avec Ruby et les gems. Certaines versions de Bundler peuvent ne pas fonctionner correctement avec certaines versions de Ruby ou de gems.
+
+**Solution :**
+- Utilisez la commande `bundle install` pour installer les gems spécifiées dans le Gemfile.
+- Si des problèmes de compatibilité surviennent, essayez d'installer une version différente de Bundler avec `gem install bundler -v 'version_compatible'`.
+- Utilisez `bundle exec` pour exécuter les commandes dans le contexte des gems spécifiées.
+
+### Gems Obsolètes ou Incompatibles
+
+Certaines gems, comme `blankslate`, peuvent être obsolètes ou ne plus être maintenues, ce qui peut entraîner des erreurs lors de l'installation ou de l'exécution de Redmine.
+
+**Solution :**
+- Recherchez des alternatives pour les gems obsolètes.
+- Consultez la documentation des gems pour vérifier leur compatibilité avec les versions actuelles de Ruby.
+- Si une gem critique est incompatible, envisagez de rétrograder Ruby ou de chercher une version alternative de la gem.
+
+## Solutions pour Trouver le Bon Tutoriel
+
+Il est parfois difficile de trouver le bon tutoriel pour l'installation de Redmine, surtout si l'on ne connaît pas bien les versions de Ruby et des autres dépendances.
+
+**Recommandations :**
+- Recherchez des tutoriels qui spécifient clairement les versions de Ruby, Redmine, et des dépendances.
+- Vérifiez la date de publication du tutoriel pour vous assurer qu'il est récent et qu'il prend en compte les dernières versions des logiciels.
+- Consultez la documentation officielle de Redmine pour les instructions les plus à jour.
+
+**Astuce :**
+- Avant de suivre un tutoriel, vérifiez toujours les versions recommandées pour chaque composant de l'installation. Cela peut vous éviter de devoir recommencer l'installation plusieurs fois en raison de problèmes de compatibilité.
+
+### Conclusion
+
+En anticipant les problèmes de compatibilité et en choisissant les bons tutoriels, vous pouvez réduire les risques d'erreurs et garantir une installation plus fluide.
+
+# Création d'un Alias DNS pour Redmine
+
+## Introduction
+Ce document explique comment créer un alias DNS pour accéder à l'application Redmine via un nom de domaine personnalisé, tel que `redmine.pharmgreen.com` par exemple.
+
+## Prérequis
+- Accès au serveur DNS pour le domaine `pharmgreen.com`.
+- Accès administrateur au serveur `SRV-DEB` hébergeant Redmine.
+- Apache installé et configuré sur le serveur `SRV-DEB`.
+
+## Étape 1 : Accéder au Serveur DNS
+
+1. Connectez-vous à l'interface de gestion de votre serveur DNS. Cela peut être une interface web (comme celle fournie par votre hébergeur) ou un serveur DNS interne que vous gérez.
+   
+   ![Capture d'écran de l'accès à l'interface DNS](path/to/screenshot1.png)
+
+2. Recherchez la section où vous pouvez gérer les enregistrements DNS pour le domaine `pharmgreen.com`.
+
+   ![Capture d'écran de la gestion des enregistrements DNS](path/to/screenshot2.png)
+
+## Étape 2 : Créer un Alias CNAME
+
+1. Cliquez sur l'option pour ajouter un nouvel enregistrement DNS.
+
+   ![Capture d'écran de l'ajout d'un enregistrement DNS](path/to/screenshot3.png)
+
+2. Sélectionnez `CNAME` comme type d'enregistrement.
+
+3. Remplissez les champs requis :
+   - **Nom** : Entrez `redmine` pour créer l'alias `redmine.pharmgreen.com`.
+   - **Type** : Sélectionnez `CNAME`.
+   - **Cible** : Entrez `srv-deb.pharmgreen.com`.
+
+   ![Capture d'écran de la configuration de l'enregistrement CNAME](path/to/screenshot4.png)
+
+4. Enregistrez l'enregistrement CNAME.
+
+## Étape 3 : Configurer Apache pour Répondre à l'Alias
+
+1. Connectez-vous au serveur `SRV-DEB` et éditez le fichier de configuration d'Apache pour Redmine.
+   
+   ```bash
+   nano /etc/apache2/sites-available/redmine.conf
+
+   
