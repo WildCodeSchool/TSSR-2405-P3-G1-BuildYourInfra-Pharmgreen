@@ -151,7 +151,7 @@ GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```
-![C4_database](https://github.com/user-attachments/assets/398637dc-1469-4738-888d-b764daed64d8)
+
 
 ![C5_database2](https://github.com/user-attachments/assets/89f569a3-08fc-4732-ba06-187a5c41c867)
 
@@ -174,10 +174,10 @@ Suivez les étapes pour sécuriser MariaDB.
 ![C6_securedatabase](https://github.com/user-attachments/assets/fc8ce757-f02d-45b3-90ea-1947a8f622f7)
 
 
+
 ## Étape 4 : Configuration de Redmine
 
 Téléchargez la version stable de Redmine, configurez le fichier `database.yml`, et installez les gems Ruby nécessaires.
-
 
 
 
