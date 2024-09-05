@@ -1,7 +1,5 @@
 
-Voici une version en Markdown bien formatée du texte que vous avez fourni :
 
-```markdown
 ### Visualiser le nom d'hôte actuel
 
 Entrez la commande `hostname -f` pour afficher le nom d'hôte actuel :
