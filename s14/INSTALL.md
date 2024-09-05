@@ -1,116 +1,93 @@
-### Étape 1 : Préparer le serveur Ubuntu
-1. **Mettre à jour le système :**
-   ```bash
-   sudo apt update && sudo apt upgrade -y
-   ```
-2. **Installer les prérequis :**
-   Assurez-vous d'avoir installé les dépendances suivantes :
-   ```bash
-   sudo apt install wget curl git -y
-   ```
 
-### Étape 2 : Télécharger et installer IRedMail
-1. **Télécharger la dernière version d'IRedMail :**
-   ```bash
-   cd /opt
-   wget https://github.com/iredmail/iRedMail/archive/refs/tags/1.7.1.tar.gz -O iredmail.tar.gz
-   ```
-2. **Extraire l'archive :**
-   ```bash
-   tar xvf iredmail.tar.gz
-   cd iRedMail-1.7.1/
-   ```
-3. **Lancer l'installation :**
-   ```bash
-   sudo bash iRedMail.sh
-   ```
-   - Vous serez invité à choisir le chemin d'installation, acceptez le chemin par défaut.
-   - Choisissez ensuite les services que vous souhaitez installer (Postfix, Dovecot, etc.).
-   - Lorsqu'on vous demande entrez le nom de domaine
-   - Choisissez le backend pour stocker les données des utilisateurs (OpenLDAP, MySQL/MariaDB, etc.).
-   - Suivez les autres instructions affichées à l'écran pour terminer l'installation.
+Voici une version en Markdown bien formatée du texte que vous avez fourni :
 
-### Étape 2 : Connecter le serveur mail au domaine 
+```markdown
+### Visualiser le nom d'hôte actuel
 
-#### Ouvrir le Gestionnaire DNS
+Entrez la commande `hostname -f` pour afficher le nom d'hôte actuel :
 
-1. **Se connecter au serveur Windows Server 2022** avec un compte ayant les droits d’administrateur.
-2. **Ouvrir le Gestionnaire DNS :**
-   - Cliquez sur le menu **Démarrer**.
-   - Tapez **DNS** et sélectionnez **DNS Manager** (ou **Gestionnaire DNS**).
+```$ hostname -f
+mx.example.com
+```
+Sur Debian/Ubuntu Linux, le nom d'hôte est défini dans deux fichiers : `/etc/hostname` et `/etc/hosts`.
 
-#### Ajouter un Enregistrement A (Adresse)
+- **/etc/hostname** : nom d'hôte court, pas FQDN.
 
-1. **Naviguer vers la zone de recherche directe (Forward Lookup Zones)** :
-   - Dans le Gestionnaire DNS, développez l’arborescence à gauche pour trouver **Zones de recherche directe**.
-   - Cliquez sur la zone correspondant à votre domaine
-   
-2. **Ajouter un enregistrement A :**
-   - Faites un clic droit sur la zone de votre domaine et sélectionnez **Nouvel hôte (A ou AAAA)...**.
-   - Dans la fenêtre qui s’ouvre :
-     - **Nom** : Saisissez `mail` (ou laissez-le vide pour créer un enregistrement pour le domaine de base).
-     - **Adresse IP** : Saisissez l'adresse IP de votre serveur de messagerie (par exemple, `192.168.1.10`).
-   - Cliquez sur **Ajouter un hôte**.
-   - Une fenêtre de confirmation apparaîtra indiquant que l'enregistrement a été créé avec succès.
+  ```
+  mx
+  ```
 
-#### Ajouter un Enregistrement MX (Mail Exchange)
+- **/etc/hosts** : table de correspondance statique pour les noms d'hôtes. **Attention** : veuillez lister le nom d'hôte FQDN en premier.
 
-1. **Ajouter un enregistrement MX :**
-   - Faites un clic droit sur la zone de votre domaine  et sélectionnez **Nouvel enregistrement MX...**.
-   - Dans la fenêtre qui s’ouvre :
-     - **Nom** : Laissez vide ou mettez `@` pour indiquer le domaine racine.
-     - **Serveur de messagerie pleinement qualifié (FQDN)** : Entrez `mail.exemple.com`.
-     - **Priorité** : Saisissez `10` ou une autre valeur. Un nombre plus bas signifie une priorité plus élevée.
-   - Cliquez sur **OK** pour ajouter l'enregistrement MX.
+  ```
+  # Partie du fichier : /etc/hosts
+  127.0.0.1   mx.example.com mx localhost localhost.localdomain
+  ```
 
-#### Ajouter un Enregistrement TXT pour SPF (Optionnel)
+Vérifiez le nom d'hôte FQDN. Si ce dernier n'a pas été mis à jour après modification des deux fichiers, redémarrez le serveur pour appliquer les changements.
 
-1. **Ajouter un enregistrement TXT :**
-   - Faites un clic droit sur la zone de votre domaine  et sélectionnez **Nouvel enregistrement TXT**.
-   - Dans la fenêtre qui s’ouvre :
-     - **Nom** : Laissez vide ou mettez `@` pour indiquer le domaine racine.
-     - **Données du texte** : Entrez la valeur `"v=spf1 mx ~all"`.
-   - Cliquez sur **OK** pour ajouter l'enregistrement.
+```
+$ hostname -f
+mx.example.com
+```
 
-#### Ajouter un Enregistrement CNAME ou d'autres Enregistrements (si nécessaire)
+---
 
-1. **Ajouter un enregistrement CNAME :**
-   - Faites un clic droit sur la zone de votre domaine  et sélectionnez **Nouvel alias (CNAME)...**.
-   - Dans la fenêtre qui s’ouvre :
-     - **Nom de l'alias** : Entrez l'alias, par exemple `www`.
-     - **Nom complet du domaine cible (FQDN)** : Entrez le nom du domaine cible, par exemple `mail.exemple.com`.
-   - Cliquez sur **OK** pour ajouter l'enregistrement.
+### Activer les dépôts apt officiels Debian/Ubuntu
+
+iRedMail nécessite les dépôts apt officiels Debian/Ubuntu, veuillez les activer dans le fichier `/etc/apt/sources.list`.
+
+### Installer les paquets requis pour l'installateur iRedMail
+
+```
+sudo apt-get install -y gzip dialog
+```
+
+### Télécharger la dernière version de iRedMail
+
+Visitez la page de [téléchargement](https://www.iredmail.org/download.html) pour obtenir la dernière version stable d'iRedMail.
+
+Transférez iRedMail sur votre serveur de messagerie via FTP, SCP ou tout autre moyen à votre disposition. Connectez-vous ensuite au serveur pour installer iRedMail. Nous supposons que vous l'avez transféré sous `/root/iRedMail-x.y.z.tar.gz` (remplacez `x.y.z` par le numéro de version réel).
+
+### Décompresser l'archive iRedMail
+
+```
+cd /root/
+tar zxf iRedMail-x.y.z.tar.gz
+```
+
+### Démarrer l'installateur iRedMail
+
+Vous êtes prêt à lancer l'installateur iRedMail, il vous posera quelques questions simples. C'est tout ce qu'il faut pour configurer un serveur de messagerie complet.
+
+```
+cd /root/iRedMail-x.y.z/
+bash iRedMail.sh
+```
+
+![Capture d'écran 2024-09-05 093332](https://github.com/user-attachments/assets/0a23befa-11ef-423a-9c68-3438db1d98ec)
+
+![Capture d'écran 2024-09-05 093344](https://github.com/user-attachments/assets/0d6d524c-9738-4f9c-896f-744e40f6e6f2)
+
+![Capture d'écran 2024-09-05 093349](https://github.com/user-attachments/assets/a3ef3b24-5519-49c0-8e97-b7aa1f65981e)
+
+![Capture d'écran 2024-09-05 093354](https://github.com/user-attachments/assets/5d5643ff-65a9-49eb-9ea7-d4cc161ed88b)
+
+![Capture d'écran 2024-09-05 093358](https://github.com/user-attachments/assets/2d03a350-67f0-4da2-87bd-ecd8f334907c)
+
+![Capture d'écran 2024-09-05 093402](https://github.com/user-attachments/assets/010ba3ff-97b8-4eb6-b4fe-5d07da7114dc)
+
+![Capture d'écran 2024-09-05 093408](https://github.com/user-attachments/assets/35bfce8f-1de5-48df-a1be-8e51699f97f6)
+
+![Capture d'écran 2024-09-05 093422](https://github.com/user-attachments/assets/b3df984d-6213-408b-ade2-1ea583db0211)
 
 
-### Étape 4 : Intégrer le domaine pharmgreen.com avec Windows Server 2022 (Active Directory)
-Si vous souhaitez que les utilisateurs de Windows Server 2022 puissent utiliser le serveur de messagerie avec leur compte AD :
 
-1. **Installer et configurer OpenLDAP sur Ubuntu :**
-   - Durant l'installation d'IRedMail, vous avez peut-être choisi OpenLDAP comme backend. Si c'est le cas, vous devez configurer la synchronisation avec votre AD sur Windows.
 
-2. **Installer et configurer `samba` et `winbind` :**
-   - Pour intégrer votre serveur Ubuntu au domaine Windows :
-     ```bash
-     sudo apt install samba winbind -y
-     ```
 
-3. **Rejoindre le domaine Windows :**
-   - Modifiez le fichier `/etc/samba/smb.conf` pour rejoindre le domaine. Ajoutez-y les paramètres nécessaires comme le domaine, le contrôleur de domaine, etc.
-   - Ensuite, utilisez la commande suivante pour rejoindre le domaine :
-     ```bash
-     sudo net ads join -U administrateur
-     ```
 
-4. **Configurer Dovecot pour l'authentification avec Active Directory :**
-   - Modifiez le fichier de configuration de Dovecot (`/etc/dovecot/dovecot.conf`) pour permettre l'authentification via LDAP.
 
-### Étape 5 : Tester l'installation
-1. **Redémarrer tous les services :**
-   ```bash
-   sudo systemctl restart postfix dovecot slapd
-   ```
-2. **Tester l'envoi et la réception d'emails :**
-   - Utilisez un client de messagerie (comme Thunderbird ou Outlook) pour vous connecter à votre serveur de messagerie via IMAP/SMTP.
+
 
 ------
 
