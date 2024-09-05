@@ -63,23 +63,43 @@ cd /root/iRedMail-x.y.z/
 bash iRedMail.sh
 ```
 
+### Poursuivre l'installation comme ci-dessous :
+
 ![Capture d'écran 2024-09-05 093332](https://github.com/user-attachments/assets/0a23befa-11ef-423a-9c68-3438db1d98ec)
 
 ![Capture d'écran 2024-09-05 093344](https://github.com/user-attachments/assets/0d6d524c-9738-4f9c-896f-744e40f6e6f2)
 
+- Spécifiez le chemin d'installation si besoin
+
 ![Capture d'écran 2024-09-05 093349](https://github.com/user-attachments/assets/a3ef3b24-5519-49c0-8e97-b7aa1f65981e)
+
+- Installer `OpenLDAP` en appuyant sur `espace`
 
 ![Capture d'écran 2024-09-05 093354](https://github.com/user-attachments/assets/5d5643ff-65a9-49eb-9ea7-d4cc161ed88b)
 
+- Choisir votre nom de domaine 
+
 ![Capture d'écran 2024-09-05 093358](https://github.com/user-attachments/assets/2d03a350-67f0-4da2-87bd-ecd8f334907c)
 
+- Choisir votre le nom de domaine de votre mail
+
 ![Capture d'écran 2024-09-05 093402](https://github.com/user-attachments/assets/010ba3ff-97b8-4eb6-b4fe-5d07da7114dc)
+
+- Définir le mot de passe du postmaster
 
 ![Capture d'écran 2024-09-05 093408](https://github.com/user-attachments/assets/35bfce8f-1de5-48df-a1be-8e51699f97f6)
 
 ![Capture d'écran 2024-09-05 093422](https://github.com/user-attachments/assets/b3df984d-6213-408b-ade2-1ea583db0211)
 
+- Tapez `y` et `y` pour finaliser l'installation
 
+### Accès aux programmes basés sur le web
+
+Après avoir terminé l'installation avec succès, vous pouvez accéder aux programmes web si vous avez choisi de les installer. Remplacez `your_server` ci-dessous par le nom d'hôte réel ou l'adresse IP de votre serveur.
+
+- **Roundcube Webmail** : [https://your_server/mail/](https://your_server/mail/)
+- **SOGo Groupware** : [https://your_server/SOGo](https://your_server/SOGo)
+- **Panneau d'administration web (iRedAdmin)** : [https://your_server/iredadmin/](https://your_server/iredadmin/)
 
 ------
 
