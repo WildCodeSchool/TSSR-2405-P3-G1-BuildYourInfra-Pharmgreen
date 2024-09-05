@@ -1,4 +1,4 @@
-
+## Installer IRedMail sous Debian 12
 
 ### Visualiser le nom d'hôte actuel
 
@@ -78,12 +78,6 @@ bash iRedMail.sh
 ![Capture d'écran 2024-09-05 093408](https://github.com/user-attachments/assets/35bfce8f-1de5-48df-a1be-8e51699f97f6)
 
 ![Capture d'écran 2024-09-05 093422](https://github.com/user-attachments/assets/b3df984d-6213-408b-ade2-1ea583db0211)
-
-
-
-
-
-
 
 
 
