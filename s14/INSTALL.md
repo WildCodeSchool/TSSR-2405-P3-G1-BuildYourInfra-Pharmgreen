@@ -101,7 +101,16 @@ Après avoir terminé l'installation avec succès, vous pouvez accéder aux prog
 - **SOGo Groupware** : [https://your_server/SOGo](https://your_server/SOGo)
 - **Panneau d'administration web (iRedAdmin)** : [https://your_server/iredadmin/](https://your_server/iredadmin/)
 
+- Configuration d'un mail utilisateur Roundcube :
+
+![Capture d'écran 2024-09-05 094805](https://github.com/user-attachments/assets/6653c27f-f2ba-4777-8a94-1c5bdabc8c12)
+
+- Connexion avec les identifiants définit sur Roundcube
+
+![Capture d'écran 2024-09-05 094735](https://github.com/user-attachments/assets/117bd58e-1c52-4dc4-80f4-aedcf0c5d459)
+
 ------
+
 
 # Installation de Redmine sur Debian 12
 
