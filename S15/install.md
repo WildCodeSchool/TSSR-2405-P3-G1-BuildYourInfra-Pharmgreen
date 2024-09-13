@@ -119,6 +119,7 @@ Va dans **Computer Configuration** → **Policies** → **Administrative Templat
      - Coche **Every week**.
      - Coche **Install updates for other Microsoft Products**.
 
+![Capture d'écran 2024-09-13 155202](https://github.com/user-attachments/assets/322f72e5-6bba-47bb-bddd-17ff1346fbed)
 
 
 2. Va dans **Enable client-side targeting**, qui fait la liaison avec les groupes créés dans WSUS.
