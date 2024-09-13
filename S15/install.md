@@ -32,6 +32,8 @@
 7. **Terminer l’installation** :
    - Cliquez sur **"Installer"** et attendez la fin de l’installation.
 
+![Capture d'écran 2024-09-13 152851](https://github.com/user-attachments/assets/0317506b-695b-4bc2-9d59-240effa59750)
+
 ### Étape 2: Configurer WSUS
 
 1. **Lancer la configuration post-installation** :
@@ -66,6 +68,10 @@
    - Computers
    - `Add Computer group` puis renseignez "GENERAL" afin de mettre les clients WSUS dans ce groupe.
 
+![Capture d'écran 2024-09-13 153043](https://github.com/user-attachments/assets/b851339a-68bd-49e5-8735-942cbf3db207)
+
+![Capture d'écran 2024-09-13 153051](https://github.com/user-attachments/assets/8a68d4c5-a4ee-42df-885b-55452fa165de)
+
 ## 2. **Configuration de l'AD pour recevoir les mises à jour WSUS**
 
 Pour que les ordinateurs clients reçoivent les mises à jour du serveur WSUS, vous devez configurer les paramètres de stratégie de groupe (GPO) sur votre serveur AD
@@ -79,9 +85,7 @@ Pour que les ordinateurs clients reçoivent les mises à jour du serveur WSUS, v
    - Faites un clic droit sur **"Objets de stratégie de groupe"**, puis sélectionnez **"Nouveau"**.
    - Nommez la stratégie (par exemple, **WSUS-Updates**).
    - Liez la avec l' OU qui a les ordinateurs Clients et WSUS
-   - Mettez les ordinateurs dans le même groupe ( ex : Domain Computers ), et mettez les permissions nécessaires , puis liez ce groupe avec votre G
-
-
+   - Mettez les ordinateurs dans le même groupe ( ex : Domain Computers ), et mettez les permissions nécessaires , puis liez ce groupe avec votre GPO
 
 
 ### Paramétrage commun à toutes les GPO :
@@ -90,13 +94,19 @@ Pour que les ordinateurs clients reçoivent les mises à jour du serveur WSUS, v
    - Faites un clic droit sur la nouvelle GPO et sélectionnez **Modifier**.
 Va dans **Computer Configuration** → **Policies** → **Administrative Templates** → **Windows Components** → **Windows Update**.
 
+![Capture d'écran 2024-09-13 153232](https://github.com/user-attachments/assets/925215ae-74a8-48ab-8551-3b3d5318ff08)
+
 1. Va dans **Specify intranet Microsoft update service location**, qui indiquera où est le serveur de mise à jour.
    - Coche **Enabled**.
    - Dans les options, pour les 2 premiers champs, mets l'URL avec le nom du serveur sous sa forme FQDN, en ajoutant le numéro de port `8530`.
    - Valide la configuration.
 
+![Capture d'écran 2024-09-13 153245](https://github.com/user-attachments/assets/88293d08-9c99-4fdb-b343-ce63503f0429)
+
 2. Va dans **Do not connect to any Windows Update Internet locations**, qui bloque la connexion aux serveurs de Microsoft.
    - Coche **Enabled** et valide la configuration.
+
+![Capture d'écran 2024-09-13 153304](https://github.com/user-attachments/assets/2e88bfb2-a69a-4209-9d96-419d5f4979c1)
 
 #### Paramétrage spécifique à cette GPO :
 
@@ -109,13 +119,19 @@ Va dans **Computer Configuration** → **Policies** → **Administrative Templat
      - Coche **Every week**.
      - Coche **Install updates for other Microsoft Products**.
 
+
+
 2. Va dans **Enable client-side targeting**, qui fait la liaison avec les groupes créés dans WSUS.
    - Coche **Enabled**.
    - Dans les options, mets le nom du groupe WSUS pour les ordinateurs cibles, donc `COMPTABILITE`.
    - Valide la configuration.
 
+![Capture d'écran 2024-09-13 153319](https://github.com/user-attachments/assets/86032b5d-2b5d-41ec-b419-89bcc41fe981)
+
 3. Va dans **Turn off auto-restart for updates during active hours**, qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs heures d'utilisation.
    - Coche **Enabled**.
+
+![Capture d'écran 2024-09-13 153358](https://github.com/user-attachments/assets/4cdf8d3b-5e57-42cd-8d8b-529df32c1cce)
 
 
 5. **Configurer la fréquence de détection des mises à jour** :
@@ -133,7 +149,9 @@ Va dans **Computer Configuration** → **Policies** → **Administrative Templat
 https://github.com/blndev/wsusworkgroup/releases/tag/1.2
 
 - Ouvrez le .exe puis renseignez les informations demandés (IP de WSUS, Groupname : GENERAL, Automatic Updates and users can configure it ect...)
-  
+
+  ![Capture d'écran 2024-09-13 153518](https://github.com/user-attachments/assets/344548f1-5b06-4c9d-ac05-86384b29172b)
+
 ## 3. **Appliquer la GPO à votre client**
 
 Pour installer les GPO configurer sur notre AD (vérifier si le serveur AD communique avec votre client):
@@ -160,6 +178,9 @@ Pour installer les GPO configurer sur notre AD (vérifier si le serveur AD commu
 7. **Vérifier les mises à jour installées (sans internet)** :
 
     - Ouvrez les **Paramètres Windows** > **Mise à jour et sécurité** > **Windows Update** et vérifiez si les mises à jour sont proposées par votre serveur WSUS.
+  
+   ![Capture d'écran 2024-09-13 153547](https://github.com/user-attachments/assets/7b475f68-5190-404f-821f-0ac05b7f3c28)
+
  
 6. **Vérifier la détéction de votre client sur WSUS** :
 
