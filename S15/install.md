@@ -1,7 +1,7 @@
 
 ## 1. **Installation de WSUS sur le serveur**
 
-### **Prérequis :*** 
+### **Prérequis :**
  - Un serveur  WSUS
  - Un client
  - Un serveur AD
