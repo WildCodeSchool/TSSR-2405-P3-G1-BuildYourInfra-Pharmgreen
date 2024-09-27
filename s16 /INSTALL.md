@@ -93,19 +93,4 @@ Cliquez sur **Save** et appliquez les changements.
    
 2. Testez la connexion en faisant un **ping** depuis un appareil du réseau du Site 1 vers une machine sur le réseau du Site 2, et inversement.
 
-### Résumé des configurations :
-
-- **Phase 1** :
-  - Remote Gateway : L'adresse IP publique de l'autre PFSense.
-  - Authentication Method : Mutual PSK.
-  - Encryption : AES 256, SHA256, DH Group 14.
-  - Pre-shared key : La même clé sur les deux sites.
-  
-- **Phase 2** :
-  - Local Network : Réseau local du site.
-  - Remote Network : Réseau local de l'autre site.
-  - Encryption : AES 256, SHA256, PFS Group 14.
-
-- **Règles de pare-feu** : Autoriser le trafic entre les réseaux locaux via l'interface IPsec sur les deux sites.
-
-Avec cette configuration, vous devriez pouvoir établir un VPN IPsec fonctionnel entre deux PFSense, interconnectant vos deux réseaux distants.
+s.
